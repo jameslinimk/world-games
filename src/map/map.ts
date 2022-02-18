@@ -1,5 +1,6 @@
 import { writable } from "svelte/store"
-import countryData from "./country-data"
+import type { MapGame } from "./games/game"
+import GuessGame from "./games/guess"
 
 const colors = {
     "ocean": "#84DFFF",
@@ -10,13 +11,9 @@ const colors = {
 class Map {
     svg?: HTMLObjectElement
     countrySvgs: { [key: string]: SVGAElement }
-    countryLabels: { [key: string]: HTMLTextAreaElement }
-    selectedCountry?: string
 
-    constructor() {
+    constructor(public game: MapGame) {
         this.countrySvgs = {}
-        this.countryLabels = {}
-
         document.body.style.backgroundColor = colors.ocean
     }
 
@@ -67,21 +64,22 @@ class Map {
                 // hoverChildren(country, colors.country)
 
                 country.addEventListener("mouseover", () => {
-                    this.selectedCountry = key
-                    if (country.tagName === "g") hoverChildren(country, colors.hover)
-                    this.rerender()
+                    this.game.selected = key
+                    if (country.tagName === "g") {
+                        hoverChildren(country, colors.hover)
+                        this.rerender()
+                    }
                 })
 
                 country.addEventListener("mouseout", () => {
-                    this.selectedCountry = undefined
-                    if (country.tagName === "g") hoverChildren(country, colors.country)
-                    this.rerender()
+                    this.game.selected = undefined
+                    if (country.tagName === "g") {
+                        hoverChildren(country, colors.country)
+                        this.rerender()
+                    }
                 })
 
-                country.addEventListener("mouseup", () => {
-                    console.log("Mouse up")
-                    alert(`You clicked ${countryData[key].longname}`)
-                })
+                country.addEventListener("mouseup", () => this.game.onClick())
             })
         }
     }
@@ -91,7 +89,7 @@ class Map {
     }
 }
 
-const map = writable(new Map())
+const map = writable(new Map(new GuessGame()))
 
 export {
     map,

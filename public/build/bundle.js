@@ -1,2 +1,2519 @@
-var app=function(){"use strict";function n(){}function e(n){return n()}function o(){return Object.create(null)}function a(n){n.forEach(e)}function i(n){return"function"==typeof n}function t(n,e){return n!=n?e==e:n!==e||n&&"object"==typeof n||"function"==typeof n}function l(e,o,a){e.$$.on_destroy.push(function(e,...o){if(null==e)return n;const a=e.subscribe(...o);return a.unsubscribe?()=>a.unsubscribe():a}(o,a))}function r(n,e){n.appendChild(e)}function g(n,e,o){n.insertBefore(e,o||null)}function p(n){n.parentNode.removeChild(n)}function u(n){return document.createElement(n)}function m(n){return document.createTextNode(n)}let s;function c(n){s=n}const h=[],d=[],y=[],N=[],v=Promise.resolve();let U=!1;function A(n){y.push(n)}const T=new Set;let f=0;function S(){const n=s;do{for(;f<h.length;){const n=h[f];f++,c(n),b(n.$$)}for(c(null),h.length=0,f=0;d.length;)d.pop()();for(let n=0;n<y.length;n+=1){const e=y[n];T.has(e)||(T.add(e),e())}y.length=0}while(h.length);for(;N.length;)N.pop()();U=!1,T.clear(),c(n)}function b(n){if(null!==n.fragment){n.update(),a(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(A)}}const C=new Set;function R(n,e){n&&n.i&&(C.delete(n),n.i(e))}function F(n,o,t,l){const{fragment:r,on_mount:g,on_destroy:p,after_update:u}=n.$$;r&&r.m(o,t),l||A((()=>{const o=g.map(e).filter(i);p?p.push(...o):a(o),n.$$.on_mount=[]})),u.forEach(A)}function M(n,e){const o=n.$$;null!==o.fragment&&(a(o.on_destroy),o.fragment&&o.fragment.d(e),o.on_destroy=o.fragment=null,o.ctx=[])}function E(n,e){-1===n.$$.dirty[0]&&(h.push(n),U||(U=!0,v.then(S)),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function I(e,i,t,l,r,g,u,m=[-1]){const h=s;c(e);const d=e.$$={fragment:null,ctx:null,props:g,update:n,not_equal:r,bound:o(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(i.context||(h?h.$$.context:[])),callbacks:o(),dirty:m,skip_bound:!1,root:i.target||h.$$.root};u&&u(d.root);let y=!1;if(d.ctx=t?t(e,i.props||{},((n,o,...a)=>{const i=a.length?a[0]:o;return d.ctx&&r(d.ctx[n],d.ctx[n]=i)&&(!d.skip_bound&&d.bound[n]&&d.bound[n](i),y&&E(e,n)),o})):[],d.update(),y=!0,a(d.before_update),d.fragment=!!l&&l(d.ctx),i.target){if(i.hydrate){const n=function(n){return Array.from(n.childNodes)}(i.target);d.fragment&&d.fragment.l(n),n.forEach(p)}else d.fragment&&d.fragment.c();i.intro&&R(e.$$.fragment),F(e,i.target,i.anchor,i.customElement),S()}c(h)}class B{$destroy(){M(this,1),this.$destroy=n}$on(n,e){const o=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return o.push(e),()=>{const n=o.indexOf(e);-1!==n&&o.splice(n,1)}}$set(n){var e;this.$$set&&(e=n,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const G=[];const K={World:{name:"Earth",longname:"",sovereignty:"",region:"",population:7658209137},AD:{name:"Andorra",longname:"The Principality of Andorra",sovereignty:"UN",region:"EU",population:77543},AE:{name:"United Arab Emirates",longname:"The United Arab Emirates",sovereignty:"UN",region:"AS",population:9890400},AF:{name:"Afghanistan",longname:"The Islamic Republic of Afghanistan",sovereignty:"UN",region:"AS",population:32225560},AG:{name:"Antigua and Barbuda",longname:"Antigua and Barbuda",sovereignty:"UN",region:"NA",population:96453},AI:{name:"Anguilla",longname:"Anguilla",sovereignty:"United Kingdom",region:"NA",population:14869},AL:{name:"Albania",longname:"The Republic of Albania",sovereignty:"UN",region:"EU",population:2862427},AM:{name:"Armenia",longname:"The Republic of Armenia",sovereignty:"UN",region:"AS",population:2957500},AO:{name:"Angola",longname:"The Republic of Angola",sovereignty:"UN",region:"AF",population:31127674},AQ:{name:"Antarctica",longname:"All land and ice shelves south of the 60th parallel south",sovereignty:"Antarctic Treaty",region:"AN",population:0},AR:{name:"Argentina",longname:"The Argentine Republic",sovereignty:"UN",region:"SA",population:44938712},AS:{name:"American Samoa",longname:"The Territory of American Samoa",sovereignty:"United States",region:"OC",population:55191},AT:{name:"Austria",longname:"The Republic of Austria",sovereignty:"UN",region:"EU",population:8902600},AU:{name:"Australia",longname:"The Commonwealth of Australia",sovereignty:"UN",region:"OC",population:25646823,provinces:{"AU-ACT":{name:"Australian Capital Territory",capital:"Canberra",population:426709},"AU-NSW":{name:"New South Wales",capital:"Sydney",population:8089526},"AU-NT":{name:"Northern Territory",capital:"Darwin",population:245869},"AU-QLD":{name:"Queensland",capital:"Brisbane",population:5095100},"AU-SA":{name:"South Australia",capital:"Adelaide",population:1751693},"AU-TAS":{name:"Tasmania",capital:"Hobart",population:534281},"AU-VIC":{name:"Victoria",capital:"Melbourne",population:6594804},"AU-WA":{name:"Western Australia",capital:"Perth",population:2621680}}},AW:{name:"Aruba",longname:"Aruba",sovereignty:"Netherlands",region:"SA",population:112309},AX:{name:"Åland Islands",longname:"Åland",sovereignty:"Finland",region:"EU",population:29789},AZ:{name:"Azerbaijan",longname:"The Republic of Azerbaijan",sovereignty:"UN",region:"AS",population:10067108},BA:{name:"Bosnia and Herzegovina",longname:"Bosnia and Herzegovina",sovereignty:"UN",region:"EU",population:3301e3},BB:{name:"Barbados",longname:"Barbados",sovereignty:"UN",region:"SA",population:287025},BD:{name:"Bangladesh",longname:"The People's Republic of Bangladesh",sovereignty:"UN",region:"AS",population:168270652},BE:{name:"Belgium",longname:"The Kingdom of Belgium",sovereignty:"UN",region:"EU",population:11524454},BF:{name:"Burkina Faso",longname:"Burkina Faso",sovereignty:"UN",region:"AF",population:20870060},BG:{name:"Bulgaria",longname:"The Republic of Bulgaria",sovereignty:"UN",region:"EU",population:7000039},BH:{name:"Bahrain",longname:"The Kingdom of Bahrain",sovereignty:"UN",region:"AS",population:1569446},BI:{name:"Burundi",longname:"The Republic of Burundi",sovereignty:"UN",region:"AF",population:10953317},BJ:{name:"Benin",longname:"The Republic of Benin",sovereignty:"UN",region:"AF",population:11733059},BL:{name:"Saint Barthelemy",longname:"The Collectivity of Saint-Barthélemy",sovereignty:"France",region:"NA",population:9793},BM:{name:"Bermuda",longname:"Bermuda",sovereignty:"United Kingdom",region:"NA",population:64027},BN:{name:"Brunei",longname:"The Nation of Brunei",sovereignty:"UN",region:"AS",population:442400},BO:{name:"Bolivia",longname:"The Plurinational State of Bolivia",sovereignty:"UN",region:"SA",population:11469896},BQ:{name:"Bonaire, Sint Eustatius and Saba",longname:"Bonaire, Sint Eustatius and Saba",sovereignty:"Netherlands",region:"SA",population:25157},BR:{name:"Brazil",longname:"The Federative Republic of Brazil",sovereignty:"UN",region:"SA",population:211257279},BS:{name:"Bahamas",longname:"The Commonwealth of The Bahamas",sovereignty:"UN",region:"NA",population:385340},BT:{name:"Bhutan",longname:"The Kingdom of Bhutan",sovereignty:"UN",region:"AS",population:741672},BV:{name:"Bouvet Island",longname:"Bouvet Island",sovereignty:"Norway",region:"AN",population:0},BW:{name:"Botswana",longname:"The Republic of Botswana",sovereignty:"UN",region:"AF",population:2338851},BY:{name:"Belarus",longname:"The Republic of Belarus",sovereignty:"UN",region:"EU",population:9413446},BZ:{name:"Belize",longname:"Belize",sovereignty:"UN",region:"NA",population:408487},CA:{name:"Canada",longname:"Canada",sovereignty:"UN",region:"NA",population:37958039,provinces:{"CA-AB":{name:"Alberta",capital:"Edmonton",population:4413146},"CA-BC":{name:"British Columbia",capital:"Victoria",population:5110917},"CA-MB":{name:"Manitoba",capital:"Winnipeg",population:1377517},"CA-NB":{name:"New Brunswick",capital:"Fredericton",population:779993},"CA-NL":{name:"Newfoundland and Labrador",capital:"St. John's",population:521365},"CA-NT":{name:"Northwest Territories",capital:"Yellowknife",population:44904},"CA-NU":{name:"Nunavut",capital:"Iqaluit",population:39097},"CA-NS":{name:"Nova Scotia",capital:"Halifax",population:977457},"CA-ON":{name:"Ontario",capital:"Toronto",population:14711827},"CA-PE":{name:"Prince Edward Island",capital:"Charlottetown",population:158158},"CA-QC":{name:"Quebec",capital:"Quebec City",population:8537674},"CA-SK":{name:"Saskatchewan",capital:"Regina",population:1181666},"CA-YT":{name:"Yukon",capital:"Whitehorse",population:41078}}},CC:{name:"Cocos (Keeling) Islands",longname:"The Territory of Cocos (Keeling) Islands",sovereignty:"Australia",region:"AS",population:544},CD:{name:"Congo (Dem. Rep.)",longname:"The Democratic Republic of the Congo",altnames:"Democratic Republic of the Congo",sovereignty:"UN",region:"AF",population:89561404},CF:{name:"Central African Republic",longname:"The Central African Republic",sovereignty:"UN",region:"AF",population:5496011},CG:{name:"Congo",longname:"The Republic of the Congo",altnames:"Republic of the Congo",sovereignty:"UN",region:"AF",population:5518092},CH:{name:"Switzerland",longname:"The Swiss Confederation",sovereignty:"UN",region:"EU",population:8586550},CI:{name:"Côte d'Ivoire",longname:"The Republic of Côte d'Ivoire",altnames:"Ivory Coast",sovereignty:"UN",region:"AF",population:25823071},CK:{name:"Cook Islands",longname:"The Cook Islands",sovereignty:"New Zealand",region:"OC",population:17518},CL:{name:"Chile",longname:"The Republic of Chile",sovereignty:"UN",region:"SA",population:19107216},CM:{name:"Cameroon",longname:"The Republic of Cameroon",sovereignty:"UN",region:"AF",population:26545864},CN:{name:"China",longname:"The People's Republic of China",sovereignty:"UN",region:"AS",population:1401768800,provinces:{"CN-AH":{name:"Anhui",capital:"Hefei",population:59500510},"CN-BJ":{name:"Beijing",capital:"Beijing",population:19612368},"CN-CQ":{name:"Chongqing",capital:"Chongqing",population:28846170},"CN-FJ":{name:"Fujian",capital:"Fuzhou",population:36894216},"CN-GD":{name:"Guangdong",capital:"Guangzhou",population:104303132},"CN-GS":{name:"Gansu",capital:"Lanzhou",population:25575254},"CN-GX":{name:"Guangxi",capital:"Nanning",population:46026629},"CN-GZ":{name:"Guizhou",capital:"Guiyang",population:34746468},"CN-HA":{name:"Henan",capital:"Zhengzhou",population:94023567},"CN-HB":{name:"Hubei",capital:"Wuhan",population:57237740},"CN-HE":{name:"Hebei",capital:"Shijiazhuang",population:71854202},"CN-HI":{name:"Hainan",capital:"Haikou",population:9171300},"CN-HK":{name:"Hong Kong",capital:"Hong Kong",population:7061200},"CN-HL":{name:"Heilongjiang",capital:"Harbin",population:38312224},"CN-HN":{name:"Hunan",capital:"Changsha",population:65683722},"CN-JL":{name:"Jilin",capital:"Changchun",population:27462297},"CN-JS":{name:"Jiangsu",capital:"Nanjing",population:78659903},"CN-JX":{name:"Jiangxi",capital:"Nanchang",population:44567475},"CN-LN":{name:"Liaoning",capital:"Shenyang",population:43746323},"CN-MO":{name:"Macau",capital:"Macau",population:552300},"CN-NM":{name:"Inner Mongolia",capital:"Hohhot",population:24706321},"CN-NX":{name:"Ningxia",capital:"Yinchuan",population:6301350},"CN-QH":{name:"Qinghai",capital:"Xining",population:5626722},"CN-SC":{name:"Sichuan",capital:"Chengdu",population:80418200},"CN-SD":{name:"Shandong",capital:"Jinan",population:95793065},"CN-SH":{name:"Shanghai",capital:"Shanghai",population:23019148},"CN-SN":{name:"Shaanxi",capital:"Xi'an",population:37327378},"CN-SX":{name:"Shanxi",capital:"Taiyuan",population:35712111},"CN-TJ":{name:"Tianjin",capital:"Tianjin",population:12938224},"CN-XJ":{name:"Xinjiang",capital:"Ürümqi",population:21813334},"CN-XZ":{name:"Tibet",capital:"Lhasa",population:3002166},"CN-YN":{name:"Yunnan",capital:"Kunming",population:45966239},"CN-ZJ":{name:"Zhejiang",capital:"Hangzhou",population:54426891}}},CO:{name:"Colombia",longname:"The Republic of Colombia",sovereignty:"UN",region:"SA",population:49395678},CR:{name:"Costa Rica",longname:"The Republic of Costa Rica",sovereignty:"UN",region:"NA",population:5058007},CU:{name:"Cuba",longname:"The Republic of Cuba",sovereignty:"UN",region:"NA",population:11209628},CV:{name:"Cabo Verde",longname:"The Republic of Cabo Verde",altnames:"Cape Verde",sovereignty:"UN",region:"AF",population:550483},CW:{name:"Curacao",longname:"The Country of Curaçao",sovereignty:"Netherlands",region:"SA",population:158665},CX:{name:"Christmas Island",longname:"The Territory of Christmas Island",sovereignty:"Australia",region:"AS",population:1843},CY:{name:"Cyprus",longname:"The Republic of Cyprus",sovereignty:"UN",region:"EU",population:875900},CZ:{name:"Czechia",longname:"The Czech Republic",altnames:"Czech Republic",sovereignty:"UN",region:"EU",population:10681161},DE:{name:"Germany",longname:"The Federal Republic of Germany",sovereignty:"UN",region:"EU",population:83149300},DJ:{name:"Djibouti",longname:"The Republic of Djibouti",sovereignty:"UN",region:"AF",population:1078373},DK:{name:"Denmark",longname:"The Kingdom of Denmark",sovereignty:"UN",region:"EU",population:5822763},DM:{name:"Dominica",longname:"The Commonwealth of Dominica",sovereignty:"UN",region:"NA",population:71808},DO:{name:"Dominican Republic",longname:"The Dominican Republic",sovereignty:"UN",region:"NA",population:10358320},DZ:{name:"Algeria",longname:"The People's Democratic Republic of Algeria",sovereignty:"UN",region:"AF",population:43e6},EC:{name:"Ecuador",longname:"The Republic of Ecuador",sovereignty:"UN",region:"SA",population:17444556},EE:{name:"Estonia",longname:"The Republic of Estonia",sovereignty:"UN",region:"EU",population:1328360},EG:{name:"Egypt",longname:"The Arab Republic of Egypt",sovereignty:"UN",region:"AF",population:100131097},EH:{name:"Western Sahara",longname:"The Sahrawi Arab Democratic Republic",altnames:"Sahrawi Arab Democratic Republic",sovereignty:"disputed",region:"AF",population:582463},ER:{name:"Eritrea",longname:"The State of Eritrea",sovereignty:"UN",region:"AF",population:582463},ES:{name:"Spain",longname:"The Kingdom of Spain",sovereignty:"UN",region:"EU",population:47100396},ET:{name:"Ethiopia",longname:"The Federal Democratic Republic of Ethiopia",sovereignty:"UN",region:"AF",population:98665e3},FI:{name:"Finland",longname:"The Republic of Finland",sovereignty:"UN",region:"EU",population:5527573},FJ:{name:"Fiji",longname:"The Republic of Fiji",sovereignty:"UN",region:"OC",population:884887},FK:{name:"Falkland Islands",longname:"The Falkland Islands",sovereignty:"United Kingdom",region:"SA",population:3198},FM:{name:"Micronesia",longname:"The Federated States of Micronesia",sovereignty:"UN",region:"OC",population:112640},FO:{name:"Faroe Islands",longname:"The Faroe Islands",sovereignty:"Denmark",region:"EU",population:52124},FR:{name:"France",longname:"The French Republic",sovereignty:"UN",region:"EU",population:67064e3},GA:{name:"Gabon",longname:"The Gabonese Republic",sovereignty:"UN",region:"AF",population:2172579},GB:{name:"United Kingdom",longname:"The United Kingdom of Great Britain and Northern Ireland",sovereignty:"UN",region:"EU",population:66435600},GD:{name:"Grenada",longname:"Grenada",sovereignty:"UN",region:"NA",population:112003},GE:{name:"Georgia",longname:"Georgia",sovereignty:"UN",region:"AS",population:3723464},GF:{name:"French Guiana",longname:"Guyane",sovereignty:"France",region:"SA",population:290691},GG:{name:"Guernsey",longname:"The Bailiwick of Guernsey",sovereignty:"British Crown",region:"EU",population:63026},GH:{name:"Ghana",longname:"The Republic of Ghana",sovereignty:"UN",region:"AF",population:30280811},GI:{name:"Gibraltar",longname:"Gibraltar",sovereignty:"United Kingdom",region:"EU",population:32194},GL:{name:"Greenland",longname:"Kalaallit Nunaat",sovereignty:"Denmark",region:"NA",population:56081},GM:{name:"Gambia",longname:"The Republic of The Gambia",sovereignty:"UN",region:"AF",population:2347706},GN:{name:"Guinea",longname:"The Republic of Guinea",sovereignty:"UN",region:"AF",population:12218357},GP:{name:"Guadeloupe",longname:"Guadeloupe",sovereignty:"France",region:"NA",population:395700},GQ:{name:"Equatorial Guinea",longname:"The Republic of Equatorial Guinea",sovereignty:"UN",region:"AF",population:1358276},GR:{name:"Greece",longname:"The Hellenic Republic",sovereignty:"UN",region:"EU",population:10724599},GS:{name:"South Georgia and the South Sandwich Islands",longname:"South Georgia and the South Sandwich Islands",sovereignty:"United Kingdom",region:"AN",population:30},GT:{name:"Guatemala",longname:"The Republic of Guatemala",sovereignty:"UN",region:"NA",population:16604026},GU:{name:"Guam",longname:"The Territory of Guam",sovereignty:"United States",region:"OC",population:165768},GW:{name:"Guinea-Bissau",longname:"The Republic of Guinea-Bissau",sovereignty:"UN",region:"AF",population:12218357},GY:{name:"Guyana",longname:"The Co-operative Republic of Guyana",sovereignty:"UN",region:"SA",population:782766},HK:{name:"Hong Kong",longname:"The Hong Kong Special Administrative Region of China",sovereignty:"China",region:"AS",population:7500700},HM:{name:"Heard Island and McDonald Islands",longname:"The Territory of Heard Island and McDonald Islands",sovereignty:"Australia",region:"AN",population:0},HN:{name:"Honduras",longname:"The Republic of Honduras",sovereignty:"UN",region:"NA",population:9158345},HR:{name:"Croatia",longname:"The Republic of Croatia",sovereignty:"UN",region:"EU",population:4076246},HT:{name:"Haiti",longname:"The Republic of Haiti",sovereignty:"UN",region:"NA",population:11577779},HU:{name:"Hungary",longname:"Hungary",sovereignty:"UN",region:"EU",population:9772756},ID:{name:"Indonesia",longname:"The Republic of Indonesia",sovereignty:"UN",region:"AS",population:266911900},IE:{name:"Ireland",longname:"Ireland",sovereignty:"UN",region:"EU",population:4921500},IL:{name:"Israel",longname:"The State of Israel",sovereignty:"UN",region:"AS",population:9171900},IM:{name:"Isle of Man",longname:"The Isle of Man",sovereignty:"British Crown",region:"EU",population:83314},IN:{name:"India",longname:"The Republic of India",sovereignty:"UN",region:"AS",population:1359812346},IO:{name:"British Indian Ocean Territory",longname:"The British Indian Ocean Territory",sovereignty:"United Kingdom",region:"AS",population:0},IQ:{name:"Iraq",longname:"The Republic of Iraq",sovereignty:"UN",region:"AS",population:39127900},IR:{name:"Iran",longname:"The Islamic Republic of Iran",sovereignty:"UN",region:"AS",population:83281956},IS:{name:"Iceland",longname:"Iceland",sovereignty:"UN",region:"EU",population:364260},IT:{name:"Italy",longname:"The Italian Republic",sovereignty:"UN",region:"EU",population:60243406},JE:{name:"Jersey",longname:"The Bailiwick of Jersey",sovereignty:"British Crown",region:"EU",population:106800},JM:{name:"Jamaica",longname:"Jamaica",sovereignty:"UN",region:"NA",population:2726667},JO:{name:"Jordan",longname:"The Hashemite Kingdom of Jordan",sovereignty:"UN",region:"AS",population:10636364},JP:{name:"Japan",longname:"Japan",sovereignty:"UN",region:"AS",population:12601e4},KE:{name:"Kenya",longname:"The Republic of Kenya",sovereignty:"UN",region:"AF",population:47564296},KG:{name:"Kyrgyzstan",longname:"The Kyrgyz Republic",sovereignty:"UN",region:"AS",population:6523500},KH:{name:"Cambodia",longname:"The Kingdom of Cambodia",sovereignty:"UN",region:"AS",population:15288489},KI:{name:"Kiribati",longname:"The Republic of Kiribati",sovereignty:"UN",region:"OC",population:115847},KM:{name:"Comoros",longname:"The Union of the Comoros",sovereignty:"UN",region:"AF",population:873724},KN:{name:"Saint Kitts and Nevis",longname:"Saint Kitts and Nevis",sovereignty:"UN",region:"NA",population:52823},KP:{name:"North Korea",longname:"The Democratic People's Republic of Korea",sovereignty:"UN",region:"AS",population:2545e4},KR:{name:"South Korea",longname:"The Republic of Korea",sovereignty:"UN",region:"AS",population:51780579},KW:{name:"Kuwait",longname:"The State of Kuwait",sovereignty:"UN",region:"AS",population:4420110},KY:{name:"Cayman Islands",longname:"The Cayman Islands",sovereignty:"United Kingdom",region:"NA",population:65813},KZ:{name:"Kazakhstan",longname:"The Republic of Kazakhstan",sovereignty:"UN",region:"AS",population:18663384},LA:{name:"Laos",longname:"The Lao People's Democratic Republic",sovereignty:"UN",region:"AS",population:7123205},LB:{name:"Lebanon",longname:"The Lebanese Republic",sovereignty:"UN",region:"AS",population:6825442},LC:{name:"Saint Lucia",longname:"Saint Lucia",sovereignty:"UN",region:"NA",population:178696},LI:{name:"Liechtenstein",longname:"The Principality of Liechtenstein",sovereignty:"UN",region:"EU",population:38557},LK:{name:"Sri Lanka",longname:"The Democratic Socialist Republic of Sri Lanka",sovereignty:"UN",region:"AS",population:21803e3},LR:{name:"Liberia",longname:"The Republic of Liberia",sovereignty:"UN",region:"AF",population:4475353},LS:{name:"Lesotho",longname:"The Kingdom of Lesotho",sovereignty:"UN",region:"AF",population:2007201},LT:{name:"Lithuania",longname:"The Republic of Lithuania",sovereignty:"UN",region:"EU",population:2793350},LU:{name:"Luxembourg",longname:"The Grand Duchy of Luxembourg",sovereignty:"UN",region:"EU",population:613894},LV:{name:"Latvia",longname:"The Republic of Latvia",sovereignty:"UN",region:"EU",population:1906800},LY:{name:"Libya",longname:"The State of Libya",sovereignty:"UN",region:"AF",population:6871287},MA:{name:"Morocco",longname:"The Kingdom of Morocco",sovereignty:"UN",region:"AF",population:35839345},MC:{name:"Monaco",longname:"The Principality of Monaco",sovereignty:"UN",region:"EU",population:38300},MD:{name:"Moldova",longname:"The Republic of Moldova",sovereignty:"UN",region:"EU",population:2681735},ME:{name:"Montenegro",longname:"Montenegro",sovereignty:"UN",region:"EU",population:622359},MF:{name:"St Martin",longname:"The Collectivity of Saint-Martin",sovereignty:"France",region:"NA",population:35107},MG:{name:"Madagascar",longname:"The Republic of Madagascar",sovereignty:"UN",region:"AF",population:25680342},MH:{name:"Marshall Islands",longname:"The Republic of the Marshall Islands",sovereignty:"UN",region:"OC",population:58413},MK:{name:"North Macedonia",longname:"Republic of North Macedonia",sovereignty:"UN",region:"EU",population:2077132},ML:{name:"Mali",longname:"The Republic of Mali",sovereignty:"UN",region:"AF",population:19973e3},MM:{name:"Myanmar",longname:"The Republic of the Union of Myanmar",sovereignty:"UN",region:"AS",population:54339766},MN:{name:"Mongolia",longname:"The State of Mongolia",sovereignty:"UN",region:"AS",population:3307640},MO:{name:"Macao",longname:"Macao Special Administrative Region of China",sovereignty:"China",region:"AS",population:667400},MP:{name:"Northern Mariana Islands",longname:"The Commonwealth of the Northern Mariana Islands",sovereignty:"United States",region:"AS",population:53883},MQ:{name:"Martinique",longname:"Martinique",sovereignty:"France",region:"NA",population:376480},MR:{name:"Mauritania",longname:"The Islamic Republic of Mauritania",sovereignty:"UN",region:"AF",population:4077347},MS:{name:"Montserrat",longname:"Montserrat",sovereignty:"United Kingdom",region:"NA",population:4989},MT:{name:"Malta",longname:"The Republic of Malta",sovereignty:"UN",region:"EU",population:493559},MU:{name:"Mauritius",longname:"The Republic of Mauritius",sovereignty:"UN",region:"AF",population:1265985},MV:{name:"Maldives",longname:"The Republic of Maldives",sovereignty:"UN",region:"AS",population:374775},MW:{name:"Malawi",longname:"The Republic of Malawi",sovereignty:"UN",region:"AF",population:17563749},MX:{name:"Mexico",longname:"The United Mexican States",sovereignty:"UN",region:"NA",population:126577691},MY:{name:"Malaysia",longname:"Malaysia",sovereignty:"UN",region:"AS",population:32719760},MZ:{name:"Mozambique",longname:"The Republic of Mozambique",sovereignty:"UN",region:"AF",population:30066648},NA:{name:"Namibia",longname:"The Republic of Namibia",sovereignty:"UN",region:"AF",population:2458936},NC:{name:"New Caledonia",longname:"New Caledonia",sovereignty:"France",region:"OC",population:282200},NE:{name:"Niger",longname:"The Republic of the Niger",sovereignty:"UN",region:"AF",population:22314743},NF:{name:"Norfolk Island",longname:"The Territory of Norfolk Island",sovereignty:"Australia",region:"OC",population:1748},NG:{name:"Nigeria",longname:"The Federal Republic of Nigeria",sovereignty:"UN",region:"AF",population:206139587},NI:{name:"Nicaragua",longname:"The Republic of Nicaragua",sovereignty:"UN",region:"NA",population:6460411},NL:{name:"Netherlands",longname:"The Kingdom of the Netherlands",sovereignty:"UN",region:"EU",population:17444731},NO:{name:"Norway",longname:"The Kingdom of Norway",sovereignty:"UN",region:"EU",population:5367580},NP:{name:"Nepal",longname:"The Federal Democratic Republic of Nepal",sovereignty:"UN",region:"AS",population:29609623},NR:{name:"Nauru",longname:"The Republic of Nauru",sovereignty:"UN",region:"OC",population:11e3},NU:{name:"Niue",longname:"Niue",sovereignty:"New Zealand",region:"OC",population:1620},NZ:{name:"New Zealand",longname:"New Zealand",sovereignty:"UN",region:"OC",population:4970447},OM:{name:"Oman",longname:"The Sultanate of Oman",sovereignty:"UN",region:"AS",population:4664790},PA:{name:"Panama",longname:"The Republic of Panamá",sovereignty:"UN",region:"NA",population:4218808},PE:{name:"Peru",longname:"The Republic of Perú",sovereignty:"UN",region:"SA",population:32131400},PF:{name:"French Polynesia",longname:"French Polynesia",sovereignty:"France",region:"OC",population:275918},PG:{name:"Papua New Guinea",longname:"The Independent State of Papua New Guinea",sovereignty:"UN",region:"OC",population:8935e3},PH:{name:"Philippines",longname:"The Republic of the Philippines",sovereignty:"UN",region:"AS",population:108407287},PK:{name:"Pakistan",longname:"The Islamic Republic of Pakistan",sovereignty:"UN",region:"AS",population:218950520},PL:{name:"Poland",longname:"The Republic of Poland",sovereignty:"UN",region:"EU",population:38386e3},PM:{name:"Saint Pierre and Miquelon",longname:"The Overseas Collectivity of Saint-Pierre and Miquelon",sovereignty:"France",region:"NA",population:6008},PN:{name:"Pitcairn Islands",longname:"The Pitcairn, Henderson, Ducie and Oeno Islands",sovereignty:"United Kingdom",region:"OC",population:50},PR:{name:"Puerto Rico",longname:"The Commonwealth of Puerto Rico",sovereignty:"United States",region:"NA",population:3193694},PS:{name:"Palestine",longname:"The State of Palestine",altnames:"State of Palestine",sovereignty:"UN observer",region:"AS",population:4976684},PT:{name:"Portugal",longname:"The Portuguese Republic",sovereignty:"UN",region:"EU",population:10276617},PW:{name:"Palau",longname:"The Republic of Palau",sovereignty:"UN",region:"OC",population:17907},PY:{name:"Paraguay",longname:"The Republic of Paraguay",sovereignty:"UN",region:"SA",population:7152703},QA:{name:"Qatar",longname:"The State of Qatar",sovereignty:"UN",region:"AS",population:2747282},RE:{name:"Reunion",longname:"Réunion",sovereignty:"France",region:"AF",population:859959},RO:{name:"Romania",longname:"Romania",sovereignty:"UN",region:"EU",population:19405156},RS:{name:"Serbia",longname:"The Republic of Serbia",sovereignty:"UN",region:"EU",population:6963764},RU:{name:"Russia",longname:"The Russian Federation",sovereignty:"UN",region:"EU",population:146745098},RW:{name:"Rwanda",longname:"The Republic of Rwanda",sovereignty:"UN",region:"AF",population:12374397},SA:{name:"Saudi Arabia",longname:"The Kingdom of Saudi Arabia",sovereignty:"UN",region:"AS",population:34218169},SB:{name:"Solomon Islands",longname:"The Solomon Islands",sovereignty:"UN",region:"OC",population:680806},SC:{name:"Seychelles",longname:"The Republic of Seychelles",sovereignty:"UN",region:"AF",population:97625},SD:{name:"Sudan",longname:"The Republic of the Sudan",sovereignty:"UN",region:"AF",population:42345710},SE:{name:"Sweden",longname:"The Kingdom of Sweden",sovereignty:"UN",region:"EU",population:10333456},SG:{name:"Singapore",longname:"The Republic of Singapore",sovereignty:"UN",region:"AS",population:5703600},SH:{name:"Saint Helena, Ascension and Tristan da Cunha",longname:"Saint Helena, Ascension and Tristan da Cunha",sovereignty:"United Kingdom",region:"AF",population:5633},SI:{name:"Slovenia",longname:"The Republic of Slovenia",sovereignty:"UN",region:"EU",population:2094060},SJ:{name:"Svalbard and Jan Mayen",longname:"Svalbard and Jan Mayen",sovereignty:"Norway",region:"EU",population:0},SK:{name:"Slovakia",longname:"The Slovak Republic",sovereignty:"UN",region:"EU",population:5456362},SL:{name:"Sierra Leone",longname:"The Republic of Sierra Leone",sovereignty:"UN",region:"AF",population:7901454},SM:{name:"San Marino",longname:"The Republic of San Marino",sovereignty:"UN",region:"EU",population:33344},SN:{name:"Senegal",longname:"The Republic of Senegal",sovereignty:"UN",region:"AF",population:16209125},SO:{name:"Somalia",longname:"The Federal Republic of Somalia",sovereignty:"UN",region:"AF",population:15893219},SR:{name:"Suriname",longname:"The Republic of Suriname",sovereignty:"UN",region:"SA",population:581372},SS:{name:"South Sudan",longname:"The Republic of South Sudan",sovereignty:"UN",region:"AF",population:12778250},ST:{name:"Sao Tome and Principe",longname:"The Democratic Republic of São Tomé and Príncipe",altnames:"São Tomé and Príncipe",sovereignty:"UN",region:"AF",population:201784},SV:{name:"El Salvador",longname:"The Republic of El Salvador",sovereignty:"UN",region:"NA",population:6486201},SX:{name:"Sint Maarten",longname:"Sint Maarten",sovereignty:"Netherlands",region:"NA",population:41486},SY:{name:"Syria",longname:"The Syrian Arab Republic",altnames:"Syrian Arab Republic",sovereignty:"UN",region:"AS",population:17500657},SZ:{name:"Eswatini",longname:"The Kingdom of Eswatini",altnames:"Swaziland",sovereignty:"UN",region:"AF",population:1093238},TC:{name:"Turks and Caicos Islands",longname:"The Turks and Caicos Islands",sovereignty:"United Kingdom",region:"NA",population:41369},TD:{name:"Chad",longname:"The Republic of Chad",sovereignty:"UN",region:"AF",population:15692969},TF:{name:"French Southern Territories",longname:"The French Southern and Antarctic Lands",sovereignty:"France",region:"AF",population:0},TG:{name:"Togo",longname:"The Togolese Republic",sovereignty:"UN",region:"AF",population:7538e3},TH:{name:"Thailand",longname:"The Kingdom of Thailand",sovereignty:"UN",region:"AS",population:66481630},TJ:{name:"Tajikistan",longname:"The Republic of Tajikistan",sovereignty:"UN",region:"AS",population:9127e3},TK:{name:"Tokelau",longname:"Tokelau",sovereignty:"New Zealand",region:"OC",population:1499},TL:{name:"Timor-Leste (East Timor)",longname:"The Democratic Republic of Timor-Leste",sovereignty:"UN",region:"AS",population:1387149},TM:{name:"Turkmenistan",longname:"Turkmenistan",sovereignty:"UN",region:"AS",population:6031187},TN:{name:"Tunisia",longname:"The Republic of Tunisia",sovereignty:"UN",region:"AF",population:11722038},TO:{name:"Tonga",longname:"The Kingdom of Tonga",sovereignty:"UN",region:"AF",population:100651},TR:{name:"Turkey",longname:"The Republic of Turkey",sovereignty:"UN",region:"AS",population:83154997},TT:{name:"Trinidad and Tobago",longname:"The Republic of Trinidad and Tobago",sovereignty:"UN",region:"NA",population:1363985},TV:{name:"Tuvalu",longname:"Tuvalu",sovereignty:"UN",region:"OC",population:11192},TW:{name:"Taiwan",longname:"The Republic of China",sovereignty:"disputed",region:"AS",population:23604265},TZ:{name:"Tanzania",longname:"The United Republic of Tanzania",sovereignty:"UN",region:"AF",population:55890747},UA:{name:"Ukraine",longname:"Ukraine",sovereignty:"UN",region:"EU",population:41902416},UG:{name:"Uganda",longname:"The Republic of Uganda",sovereignty:"UN",region:"AF",population:40299300},UM:{name:"United States Minor Outlying Islands",longname:"Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Atoll, Navassa Island, Palmyra Atoll, and Wake Island",sovereignty:"United States",region:"OC",population:0},US:{name:"United States",longname:"The United States of America",sovereignty:"UN",region:"NA",population:329453849},UY:{name:"Uruguay",longname:"The Oriental Republic of Uruguay",sovereignty:"UN",region:"SA",population:3518552},UZ:{name:"Uzbekistan",longname:"The Republic of Uzbekistan",sovereignty:"UN",region:"AS",population:34070275},VA:{name:"Holy See",longname:"The Holy See",sovereignty:"UN observer",region:"EU",population:1e3},VC:{name:"Saint Vincent and the Grenadines",longname:"Saint Vincent and the Grenadines",sovereignty:"UN",region:"NA",population:110211},VE:{name:"Venezuela",longname:"The Bolivarian Republic of Venezuela",sovereignty:"UN",region:"SA",population:32219521},VG:{name:"British Virgin Islands",longname:"The Virgin Islands",sovereignty:"United Kingdom",region:"NA",population:30030},VI:{name:"Virgin Islands (U.S.)",longname:"The Virgin Islands of the United States",sovereignty:"United States",region:"NA",population:104578},VN:{name:"Viet Nam",longname:"The Socialist Republic of Viet Nam",sovereignty:"UN",region:"AS",population:96208984},VU:{name:"Vanuatu",longname:"The Republic of Vanuatu",sovereignty:"UN",region:"OC",population:304500},WF:{name:"Wallis and Futuna",longname:"The Territory of the Wallis and Futuna Islands",sovereignty:"France",region:"OC",population:11558},WS:{name:"Samoa",longname:"The Independent State of Samoa",sovereignty:"UN",region:"OC",population:195843},XK:{name:"Kosovo",longname:"The Republic of Kosovo",sovereignty:"disputed",region:"EU",population:1810463},YE:{name:"Yemen",longname:"The Republic of Yemen",sovereignty:"UN",region:"AS",population:29825968},YT:{name:"Mayotte",longname:"The Department of Mayotte",sovereignty:"France",region:"AF",population:279471},ZA:{name:"South Africa",longname:"The Republic of South Africa",sovereignty:"UN",region:"AF",population:58775022},ZM:{name:"Zambia",longname:"The Republic of Zambia",sovereignty:"UN",region:"AF",population:17381168},ZW:{name:"Zimbabwe",longname:"The Republic of Zimbabwe",sovereignty:"UN",region:"AF",population:15159624}},w="#84DFFF",P="#65C18C",L="#C1F4C5";const H=function(e,o=n){let a;const i=new Set;function l(n){if(t(e,n)&&(e=n,a)){const n=!G.length;for(const n of i)n[1](),G.push(n,e);if(n){for(let n=0;n<G.length;n+=2)G[n][0](G[n+1]);G.length=0}}}return{set:l,update:function(n){l(n(e))},subscribe:function(t,r=n){const g=[t,r];return i.add(g),1===i.size&&(a=o(l)||n),t(e),()=>{i.delete(g),0===i.size&&(a(),a=null)}}}}(new class{constructor(){this.countrySvgs={},this.countryLabels={},document.body.style.backgroundColor=w}loadMap(){const n=document.createElement("div");n.setAttribute("id","mapContainer"),document.body.prepend(n),this.svg=document.createElement("object"),this.svg.setAttribute("id","map"),this.svg.setAttribute("type","image/svg+xml"),this.svg.setAttribute("data","./map.svg"),n.appendChild(this.svg);const e=document.createElement("style");e.innerHTML="#mapContainer, #map { width: 100%; height: 100%; }",document.head.appendChild(e),this.svg.onload=()=>{var n,e,o,a;null===(a=null===(o=null===(e=null===(n=this.svg)||void 0===n?void 0:n.getSVGDocument())||void 0===e?void 0:e.children[0])||void 0===o?void 0:o.childNodes)||void 0===a||a.forEach((n=>{const e=n;null==e.id||"_"==e.id.substr(0,1)||"g"!=e.tagName&&"path"!=e.tagName&&"rect"!=e.tagName||(this.countrySvgs[e.id]=e)})),this.countrySvgs.Ocean.style.fill=w,this.countrySvgs.World.style.fill=w,delete this.countrySvgs.Ocean,delete this.countrySvgs.World;const i=(n,e)=>{n.childNodes.forEach((n=>{"g"===n.tagName?i(n,e):"path"!==n.tagName&&"circle"!==n.tagName||((n,e)=>{n.style.fill=e})(n,e)}))};Object.keys(this.countrySvgs).forEach((n=>{const e=this.countrySvgs[n];e.addEventListener("mouseover",(()=>{this.selectedCountry=n,"g"===e.tagName&&i(e,L),this.rerender()})),e.addEventListener("mouseout",(()=>{this.selectedCountry=void 0,"g"===e.tagName&&i(e,P),this.rerender()})),e.addEventListener("mouseup",(()=>{console.log("Mouse up"),alert(`You clicked ${K[n].longname}`)}))}))}}rerender(){H.update((n=>n))}});function k(e){let o,a,i,t=(void 0===e[0].selectedCountry?"None":K[e[0].selectedCountry]?.name)+"";return{c(){var n,e,l;o=u("div"),a=m("Selected: "),i=m(t),n=o,e="class",null==(l="infoBox svelte-1u8q10l")?n.removeAttribute(e):n.getAttribute(e)!==l&&n.setAttribute(e,l)},m(n,e){g(n,o,e),r(o,a),r(o,i)},p(n,[e]){1&e&&t!==(t=(void 0===n[0].selectedCountry?"None":K[n[0].selectedCountry]?.name)+"")&&function(n,e){e=""+e,n.wholeText!==e&&(n.data=e)}(i,t)},i:n,o:n,d(n){n&&p(o)}}}function O(n,e,o){let a;return l(n,H,(n=>o(0,a=n))),[a]}class D extends B{constructor(n){super(),I(this,n,O,k,t,{})}}function $(e){let o,a,i;return a=new D({}),{c(){var n;o=u("main"),(n=a.$$.fragment)&&n.c()},m(n,e){g(n,o,e),F(a,o,null),i=!0},p:n,i(n){i||(R(a.$$.fragment,n),i=!0)},o(n){!function(n,e,o,a){if(n&&n.o){if(C.has(n))return;C.add(n),(void 0).c.push((()=>{C.delete(n),a&&(o&&n.d(1),a())})),n.o(e)}}(a.$$.fragment,n),i=!1},d(n){n&&p(o),M(a)}}}function z(n,e,o){let a;return l(n,H,(n=>o(0,a=n))),a.loadMap(),[]}return new class extends B{constructor(n){super(),I(this,n,z,$,t,{})}}({target:document.body})}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function validate_store(store, name) {
+        if (store != null && typeof store.subscribe !== 'function') {
+            throw new Error(`'${name}' is not a store with a 'subscribe' method`);
+        }
+    }
+    function subscribe(store, ...callbacks) {
+        if (store == null) {
+            return noop;
+        }
+        const unsub = store.subscribe(...callbacks);
+        return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+    }
+    function component_subscribe(component, store, callback) {
+        component.$$.on_destroy.push(subscribe(store, callback));
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function custom_event(type, detail, bubbles = false) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (flushidx < dirty_components.length) {
+                const component = dirty_components[flushidx];
+                flushidx++;
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.46.4' }, detail), true));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    const subscriber_queue = [];
+    /**
+     * Create a `Writable` store that allows both updating and reading by subscription.
+     * @param {*=}value initial value
+     * @param {StartStopNotifier=}start start and stop notifications for subscriptions
+     */
+    function writable(value, start = noop) {
+        let stop;
+        const subscribers = new Set();
+        function set(new_value) {
+            if (safe_not_equal(value, new_value)) {
+                value = new_value;
+                if (stop) { // store is ready
+                    const run_queue = !subscriber_queue.length;
+                    for (const subscriber of subscribers) {
+                        subscriber[1]();
+                        subscriber_queue.push(subscriber, value);
+                    }
+                    if (run_queue) {
+                        for (let i = 0; i < subscriber_queue.length; i += 2) {
+                            subscriber_queue[i][0](subscriber_queue[i + 1]);
+                        }
+                        subscriber_queue.length = 0;
+                    }
+                }
+            }
+        }
+        function update(fn) {
+            set(fn(value));
+        }
+        function subscribe(run, invalidate = noop) {
+            const subscriber = [run, invalidate];
+            subscribers.add(subscriber);
+            if (subscribers.size === 1) {
+                stop = start(set) || noop;
+            }
+            run(value);
+            return () => {
+                subscribers.delete(subscriber);
+                if (subscribers.size === 0) {
+                    stop();
+                    stop = null;
+                }
+            };
+        }
+        return { set, update, subscribe };
+    }
+
+    const countryData = {
+        "World": {
+            "name": "Earth",
+            "population": 7658209137
+        },
+        "AD": {
+            "name": "Andorra",
+            "longName": "The Principality of Andorra",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 77543
+        },
+        "AE": {
+            "name": "United Arab Emirates",
+            "longName": "The United Arab Emirates",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 9890400
+        },
+        "AF": {
+            "name": "Afghanistan",
+            "longName": "The Islamic Republic of Afghanistan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 32225560
+        },
+        "AG": {
+            "name": "Antigua and Barbuda",
+            "longName": "Antigua and Barbuda",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 96453
+        },
+        "AI": {
+            "name": "Anguilla",
+            "longName": "Anguilla",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 14869
+        },
+        "AL": {
+            "name": "Albania",
+            "longName": "The Republic of Albania",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 2862427
+        },
+        "AM": {
+            "name": "Armenia",
+            "longName": "The Republic of Armenia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 2957500
+        },
+        "AO": {
+            "name": "Angola",
+            "longName": "The Republic of Angola",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 31127674
+        },
+        "AQ": {
+            "name": "Antarctica",
+            "longName": "All land and ice shelves south of the 60th parallel south",
+            "sovereignty": "Antarctic Treaty",
+            "region": "AN",
+            "population": 0
+        },
+        "AR": {
+            "name": "Argentina",
+            "longName": "The Argentine Republic",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 44938712
+        },
+        "AS": {
+            "name": "American Samoa",
+            "longName": "The Territory of American Samoa",
+            "sovereignty": "United States",
+            "region": "OC",
+            "population": 55191
+        },
+        "AT": {
+            "name": "Austria",
+            "longName": "The Republic of Austria",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 8902600
+        },
+        "AU": {
+            "name": "Australia",
+            "longName": "The Commonwealth of Australia",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 25646823,
+            "provinces": {
+                "AU-ACT": { "name": "Australian Capital Territory", "capital": "Canberra", "population": 426709 },
+                "AU-NSW": { "name": "New South Wales", "capital": "Sydney", "population": 8089526 },
+                "AU-NT": { "name": "Northern Territory", "capital": "Darwin", "population": 245869 },
+                "AU-QLD": { "name": "Queensland", "capital": "Brisbane", "population": 5095100 },
+                "AU-SA": { "name": "South Australia", "capital": "Adelaide", "population": 1751693 },
+                "AU-TAS": { "name": "Tasmania", "capital": "Hobart", "population": 534281 },
+                "AU-VIC": { "name": "Victoria", "capital": "Melbourne", "population": 6594804 },
+                "AU-WA": { "name": "Western Australia", "capital": "Perth", "population": 2621680 }
+            }
+        },
+        "AW": {
+            "name": "Aruba",
+            "longName": "Aruba",
+            "sovereignty": "Netherlands",
+            "region": "SA",
+            "population": 112309
+        },
+        "AX": {
+            "name": "Åland Islands",
+            "longName": "Åland",
+            "sovereignty": "Finland",
+            "region": "EU",
+            "population": 29789
+        },
+        "AZ": {
+            "name": "Azerbaijan",
+            "longName": "The Republic of Azerbaijan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 10067108
+        },
+        "BA": {
+            "name": "Bosnia and Herzegovina",
+            "longName": "Bosnia and Herzegovina",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 3301000
+        },
+        "BB": {
+            "name": "Barbados",
+            "longName": "Barbados",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 287025
+        },
+        "BD": {
+            "name": "Bangladesh",
+            "longName": "The People's Republic of Bangladesh",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 168270652
+        },
+        "BE": {
+            "name": "Belgium",
+            "longName": "The Kingdom of Belgium",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 11524454
+        },
+        "BF": {
+            "name": "Burkina Faso",
+            "longName": "Burkina Faso",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 20870060
+        },
+        "BG": {
+            "name": "Bulgaria",
+            "longName": "The Republic of Bulgaria",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 7000039
+        },
+        "BH": {
+            "name": "Bahrain",
+            "longName": "The Kingdom of Bahrain",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 1569446
+        },
+        "BI": {
+            "name": "Burundi",
+            "longName": "The Republic of Burundi",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 10953317
+        },
+        "BJ": {
+            "name": "Benin",
+            "longName": "The Republic of Benin",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 11733059
+        },
+        "BL": {
+            "name": "Saint Barthelemy",
+            "longName": "The Collectivity of Saint-Barthélemy",
+            "sovereignty": "France",
+            "region": "NA",
+            "population": 9793
+        },
+        "BM": {
+            "name": "Bermuda",
+            "longName": "Bermuda",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 64027
+        },
+        "BN": {
+            "name": "Brunei",
+            "longName": "The Nation of Brunei",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 442400
+        },
+        "BO": {
+            "name": "Bolivia",
+            "longName": "The Plurinational State of Bolivia",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 11469896
+        },
+        "BQ": {
+            "name": "Bonaire, Sint Eustatius and Saba",
+            "longName": "Bonaire, Sint Eustatius and Saba",
+            "sovereignty": "Netherlands",
+            "region": "SA",
+            "population": 25157
+        },
+        "BR": {
+            "name": "Brazil",
+            "longName": "The Federative Republic of Brazil",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 211257279
+        },
+        "BS": {
+            "name": "Bahamas",
+            "longName": "The Commonwealth of The Bahamas",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 385340
+        },
+        "BT": {
+            "name": "Bhutan",
+            "longName": "The Kingdom of Bhutan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 741672
+        },
+        "BV": {
+            "name": "Bouvet Island",
+            "longName": "Bouvet Island",
+            "sovereignty": "Norway",
+            "region": "AN",
+            "population": 0
+        },
+        "BW": {
+            "name": "Botswana",
+            "longName": "The Republic of Botswana",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 2338851
+        },
+        "BY": {
+            "name": "Belarus",
+            "longName": "The Republic of Belarus",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 9413446
+        },
+        "BZ": {
+            "name": "Belize",
+            "longName": "Belize",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 408487
+        },
+        "CA": {
+            "name": "Canada",
+            "longName": "Canada",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 37958039,
+            "provinces": {
+                "CA-AB": { "name": "Alberta", "capital": "Edmonton", "population": 4413146 },
+                "CA-BC": { "name": "British Columbia", "capital": "Victoria", "population": 5110917 },
+                "CA-MB": { "name": "Manitoba", "capital": "Winnipeg", "population": 1377517 },
+                "CA-NB": { "name": "New Brunswick", "capital": "Fredericton", "population": 779993 },
+                "CA-NL": { "name": "Newfoundland and Labrador", "capital": "St. John's", "population": 521365 },
+                "CA-NT": { "name": "Northwest Territories", "capital": "Yellowknife", "population": 44904 },
+                "CA-NU": { "name": "Nunavut", "capital": "Iqaluit", "population": 39097 },
+                "CA-NS": { "name": "Nova Scotia", "capital": "Halifax", "population": 977457 },
+                "CA-ON": { "name": "Ontario", "capital": "Toronto", "population": 14711827 },
+                "CA-PE": { "name": "Prince Edward Island", "capital": "Charlottetown", "population": 158158 },
+                "CA-QC": { "name": "Quebec", "capital": "Quebec City", "population": 8537674 },
+                "CA-SK": { "name": "Saskatchewan", "capital": "Regina", "population": 1181666 },
+                "CA-YT": { "name": "Yukon", "capital": "Whitehorse", "population": 41078 }
+            }
+        },
+        "CC": {
+            "name": "Cocos (Keeling) Islands",
+            "longName": "The Territory of Cocos (Keeling) Islands",
+            "sovereignty": "Australia",
+            "region": "AS",
+            "population": 544
+        },
+        "CD": {
+            "name": "Congo (Dem. Rep.)",
+            "longName": "The Democratic Republic of the Congo",
+            "altNames": "Democratic Republic of the Congo",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 89561404
+        },
+        "CF": {
+            "name": "Central African Republic",
+            "longName": "The Central African Republic",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 5496011
+        },
+        "CG": {
+            "name": "Congo",
+            "longName": "The Republic of the Congo",
+            "altNames": "Republic of the Congo",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 5518092
+        },
+        "CH": {
+            "name": "Switzerland",
+            "longName": "The Swiss Confederation",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 8586550
+        },
+        "CI": {
+            "name": "Côte d'Ivoire",
+            "longName": "The Republic of Côte d'Ivoire",
+            "altNames": "Ivory Coast",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 25823071
+        },
+        "CK": {
+            "name": "Cook Islands",
+            "longName": "The Cook Islands",
+            "sovereignty": "New Zealand",
+            "region": "OC",
+            "population": 17518
+        },
+        "CL": {
+            "name": "Chile",
+            "longName": "The Republic of Chile",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 19107216
+        },
+        "CM": {
+            "name": "Cameroon",
+            "longName": "The Republic of Cameroon",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 26545864
+        },
+        "CN": {
+            "name": "China",
+            "longName": "The People's Republic of China",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 1401768800,
+            "provinces": {
+                "CN-AH": { "name": "Anhui", "capital": "Hefei", "population": 59500510 },
+                "CN-BJ": { "name": "Beijing", "capital": "Beijing", "population": 19612368 },
+                "CN-CQ": { "name": "Chongqing", "capital": "Chongqing", "population": 28846170 },
+                "CN-FJ": { "name": "Fujian", "capital": "Fuzhou", "population": 36894216 },
+                "CN-GD": { "name": "Guangdong", "capital": "Guangzhou", "population": 104303132 },
+                "CN-GS": { "name": "Gansu", "capital": "Lanzhou", "population": 25575254 },
+                "CN-GX": { "name": "Guangxi", "capital": "Nanning", "population": 46026629 },
+                "CN-GZ": { "name": "Guizhou", "capital": "Guiyang", "population": 34746468 },
+                "CN-HA": { "name": "Henan", "capital": "Zhengzhou", "population": 94023567 },
+                "CN-HB": { "name": "Hubei", "capital": "Wuhan", "population": 57237740 },
+                "CN-HE": { "name": "Hebei", "capital": "Shijiazhuang", "population": 71854202 },
+                "CN-HI": { "name": "Hainan", "capital": "Haikou", "population": 9171300 },
+                "CN-HK": { "name": "Hong Kong", "capital": "Hong Kong", "population": 7061200 },
+                "CN-HL": { "name": "Heilongjiang", "capital": "Harbin", "population": 38312224 },
+                "CN-HN": { "name": "Hunan", "capital": "Changsha", "population": 65683722 },
+                "CN-JL": { "name": "Jilin", "capital": "Changchun", "population": 27462297 },
+                "CN-JS": { "name": "Jiangsu", "capital": "Nanjing", "population": 78659903 },
+                "CN-JX": { "name": "Jiangxi", "capital": "Nanchang", "population": 44567475 },
+                "CN-LN": { "name": "Liaoning", "capital": "Shenyang", "population": 43746323 },
+                "CN-MO": { "name": "Macau", "capital": "Macau", "population": 552300 },
+                "CN-NM": { "name": "Inner Mongolia", "capital": "Hohhot", "population": 24706321 },
+                "CN-NX": { "name": "Ningxia", "capital": "Yinchuan", "population": 6301350 },
+                "CN-QH": { "name": "Qinghai", "capital": "Xining", "population": 5626722 },
+                "CN-SC": { "name": "Sichuan", "capital": "Chengdu", "population": 80418200 },
+                "CN-SD": { "name": "Shandong", "capital": "Jinan", "population": 95793065 },
+                "CN-SH": { "name": "Shanghai", "capital": "Shanghai", "population": 23019148 },
+                "CN-SN": { "name": "Shaanxi", "capital": "Xi'an", "population": 37327378 },
+                "CN-SX": { "name": "Shanxi", "capital": "Taiyuan", "population": 35712111 },
+                "CN-TJ": { "name": "Tianjin", "capital": "Tianjin", "population": 12938224 },
+                "CN-XJ": { "name": "Xinjiang", "capital": "Ürümqi", "population": 21813334 },
+                "CN-XZ": { "name": "Tibet", "capital": "Lhasa", "population": 3002166 },
+                "CN-YN": { "name": "Yunnan", "capital": "Kunming", "population": 45966239 },
+                "CN-ZJ": { "name": "Zhejiang", "capital": "Hangzhou", "population": 54426891 }
+            }
+        },
+        "CO": {
+            "name": "Colombia",
+            "longName": "The Republic of Colombia",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 49395678
+        },
+        "CR": {
+            "name": "Costa Rica",
+            "longName": "The Republic of Costa Rica",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 5058007
+        },
+        "CU": {
+            "name": "Cuba",
+            "longName": "The Republic of Cuba",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 11209628
+        },
+        "CV": {
+            "name": "Cabo Verde",
+            "longName": "The Republic of Cabo Verde",
+            "altNames": "Cape Verde",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 550483
+        },
+        "CW": {
+            "name": "Curacao",
+            "longName": "The Country of Curaçao",
+            "sovereignty": "Netherlands",
+            "region": "SA",
+            "population": 158665
+        },
+        "CX": {
+            "name": "Christmas Island",
+            "longName": "The Territory of Christmas Island",
+            "sovereignty": "Australia",
+            "region": "AS",
+            "population": 1843
+        },
+        "CY": {
+            "name": "Cyprus",
+            "longName": "The Republic of Cyprus",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 875900
+        },
+        "CZ": {
+            "name": "Czechia",
+            "longName": "The Czech Republic",
+            "altNames": "Czech Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 10681161
+        },
+        "DE": {
+            "name": "Germany",
+            "longName": "The Federal Republic of Germany",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 83149300
+        },
+        "DJ": {
+            "name": "Djibouti",
+            "longName": "The Republic of Djibouti",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 1078373
+        },
+        "DK": {
+            "name": "Denmark",
+            "longName": "The Kingdom of Denmark",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 5822763
+        },
+        "DM": {
+            "name": "Dominica",
+            "longName": "The Commonwealth of Dominica",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 71808
+        },
+        "DO": {
+            "name": "Dominican Republic",
+            "longName": "The Dominican Republic",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 10358320
+        },
+        "DZ": {
+            "name": "Algeria",
+            "longName": "The People's Democratic Republic of Algeria",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 43000000
+        },
+        "EC": {
+            "name": "Ecuador",
+            "longName": "The Republic of Ecuador",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 17444556
+        },
+        "EE": {
+            "name": "Estonia",
+            "longName": "The Republic of Estonia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 1328360
+        },
+        "EG": {
+            "name": "Egypt",
+            "longName": "The Arab Republic of Egypt",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 100131097
+        },
+        "EH": {
+            "name": "Western Sahara",
+            "longName": "The Sahrawi Arab Democratic Republic",
+            "altNames": "Sahrawi Arab Democratic Republic",
+            "sovereignty": "disputed",
+            "region": "AF",
+            "population": 582463
+        },
+        "ER": {
+            "name": "Eritrea",
+            "longName": "The State of Eritrea",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 582463
+        },
+        "ES": {
+            "name": "Spain",
+            "longName": "The Kingdom of Spain",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 47100396
+        },
+        "ET": {
+            "name": "Ethiopia",
+            "longName": "The Federal Democratic Republic of Ethiopia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 98665000
+        },
+        "FI": {
+            "name": "Finland",
+            "longName": "The Republic of Finland",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 5527573
+        },
+        "FJ": {
+            "name": "Fiji",
+            "longName": "The Republic of Fiji",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 884887
+        },
+        "FK": {
+            "name": "Falkland Islands",
+            "longName": "The Falkland Islands",
+            "sovereignty": "United Kingdom",
+            "region": "SA",
+            "population": 3198
+        },
+        "FM": {
+            "name": "Micronesia",
+            "longName": "The Federated States of Micronesia",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 112640
+        },
+        "FO": {
+            "name": "Faroe Islands",
+            "longName": "The Faroe Islands",
+            "sovereignty": "Denmark",
+            "region": "EU",
+            "population": 52124
+        },
+        "FR": {
+            "name": "France",
+            "longName": "The French Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 67064000
+        },
+        "GA": {
+            "name": "Gabon",
+            "longName": "The Gabonese Republic",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 2172579
+        },
+        "GB": {
+            "name": "United Kingdom",
+            "longName": "The United Kingdom of Great Britain and Northern Ireland",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 66435600
+        },
+        "GD": {
+            "name": "Grenada",
+            "longName": "Grenada",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 112003
+        },
+        "GE": {
+            "name": "Georgia",
+            "longName": "Georgia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 3723464
+        },
+        "GF": {
+            "name": "French Guiana",
+            "longName": "Guyane",
+            "sovereignty": "France",
+            "region": "SA",
+            "population": 290691
+        },
+        "GG": {
+            "name": "Guernsey",
+            "longName": "The Bailiwick of Guernsey",
+            "sovereignty": "British Crown",
+            "region": "EU",
+            "population": 63026
+        },
+        "GH": {
+            "name": "Ghana",
+            "longName": "The Republic of Ghana",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 30280811
+        },
+        "GI": {
+            "name": "Gibraltar",
+            "longName": "Gibraltar",
+            "sovereignty": "United Kingdom",
+            "region": "EU",
+            "population": 32194
+        },
+        "GL": {
+            "name": "Greenland",
+            "longName": "Kalaallit Nunaat",
+            "sovereignty": "Denmark",
+            "region": "NA",
+            "population": 56081
+        },
+        "GM": {
+            "name": "Gambia",
+            "longName": "The Republic of The Gambia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 2347706
+        },
+        "GN": {
+            "name": "Guinea",
+            "longName": "The Republic of Guinea",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 12218357
+        },
+        "GP": {
+            "name": "Guadeloupe",
+            "longName": "Guadeloupe",
+            "sovereignty": "France",
+            "region": "NA",
+            "population": 395700
+        },
+        "GQ": {
+            "name": "Equatorial Guinea",
+            "longName": "The Republic of Equatorial Guinea",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 1358276
+        },
+        "GR": {
+            "name": "Greece",
+            "longName": "The Hellenic Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 10724599
+        },
+        "GS": {
+            "name": "South Georgia and the South Sandwich Islands",
+            "longName": "South Georgia and the South Sandwich Islands",
+            "sovereignty": "United Kingdom",
+            "region": "AN",
+            "population": 30
+        },
+        "GT": {
+            "name": "Guatemala",
+            "longName": "The Republic of Guatemala",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 16604026
+        },
+        "GU": {
+            "name": "Guam",
+            "longName": "The Territory of Guam",
+            "sovereignty": "United States",
+            "region": "OC",
+            "population": 165768
+        },
+        "GW": {
+            "name": "Guinea-Bissau",
+            "longName": "The Republic of Guinea-Bissau",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 12218357
+        },
+        "GY": {
+            "name": "Guyana",
+            "longName": "The Co-operative Republic of Guyana",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 782766
+        },
+        "HK": {
+            "name": "Hong Kong",
+            "longName": "The Hong Kong Special Administrative Region of China",
+            "sovereignty": "China",
+            "region": "AS",
+            "population": 7500700
+        },
+        "HM": {
+            "name": "Heard Island and McDonald Islands",
+            "longName": "The Territory of Heard Island and McDonald Islands",
+            "sovereignty": "Australia",
+            "region": "AN",
+            "population": 0
+        },
+        "HN": {
+            "name": "Honduras",
+            "longName": "The Republic of Honduras",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 9158345
+        },
+        "HR": {
+            "name": "Croatia",
+            "longName": "The Republic of Croatia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 4076246
+        },
+        "HT": {
+            "name": "Haiti",
+            "longName": "The Republic of Haiti",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 11577779
+        },
+        "HU": {
+            "name": "Hungary",
+            "longName": "Hungary",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 9772756
+        },
+        "ID": {
+            "name": "Indonesia",
+            "longName": "The Republic of Indonesia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 266911900
+        },
+        "IE": {
+            "name": "Ireland",
+            "longName": "Ireland",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 4921500
+        },
+        "IL": {
+            "name": "Israel",
+            "longName": "The State of Israel",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 9171900
+        },
+        "IM": {
+            "name": "Isle of Man",
+            "longName": "The Isle of Man",
+            "sovereignty": "British Crown",
+            "region": "EU",
+            "population": 83314
+        },
+        "IN": {
+            "name": "India",
+            "longName": "The Republic of India",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 1359812346
+        },
+        "IO": {
+            "name": "British Indian Ocean Territory",
+            "longName": "The British Indian Ocean Territory",
+            "sovereignty": "United Kingdom",
+            "region": "AS",
+            "population": 0
+        },
+        "IQ": {
+            "name": "Iraq",
+            "longName": "The Republic of Iraq",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 39127900
+        },
+        "IR": {
+            "name": "Iran",
+            "longName": "The Islamic Republic of Iran",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 83281956
+        },
+        "IS": {
+            "name": "Iceland",
+            "longName": "Iceland",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 364260
+        },
+        "IT": {
+            "name": "Italy",
+            "longName": "The Italian Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 60243406
+        },
+        "JE": {
+            "name": "Jersey",
+            "longName": "The Bailiwick of Jersey",
+            "sovereignty": "British Crown",
+            "region": "EU",
+            "population": 106800
+        },
+        "JM": {
+            "name": "Jamaica",
+            "longName": "Jamaica",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 2726667
+        },
+        "JO": {
+            "name": "Jordan",
+            "longName": "The Hashemite Kingdom of Jordan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 10636364
+        },
+        "JP": {
+            "name": "Japan",
+            "longName": "Japan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 126010000
+        },
+        "KE": {
+            "name": "Kenya",
+            "longName": "The Republic of Kenya",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 47564296
+        },
+        "KG": {
+            "name": "Kyrgyzstan",
+            "longName": "The Kyrgyz Republic",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 6523500
+        },
+        "KH": {
+            "name": "Cambodia",
+            "longName": "The Kingdom of Cambodia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 15288489
+        },
+        "KI": {
+            "name": "Kiribati",
+            "longName": "The Republic of Kiribati",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 115847
+        },
+        "KM": {
+            "name": "Comoros",
+            "longName": "The Union of the Comoros",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 873724
+        },
+        "KN": {
+            "name": "Saint Kitts and Nevis",
+            "longName": "Saint Kitts and Nevis",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 52823
+        },
+        "KP": {
+            "name": "North Korea",
+            "longName": "The Democratic People's Republic of Korea",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 25450000
+        },
+        "KR": {
+            "name": "South Korea",
+            "longName": "The Republic of Korea",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 51780579
+        },
+        "KW": {
+            "name": "Kuwait",
+            "longName": "The State of Kuwait",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 4420110
+        },
+        "KY": {
+            "name": "Cayman Islands",
+            "longName": "The Cayman Islands",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 65813
+        },
+        "KZ": {
+            "name": "Kazakhstan",
+            "longName": "The Republic of Kazakhstan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 18663384
+        },
+        "LA": {
+            "name": "Laos",
+            "longName": "The Lao People's Democratic Republic",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 7123205
+        },
+        "LB": {
+            "name": "Lebanon",
+            "longName": "The Lebanese Republic",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 6825442
+        },
+        "LC": {
+            "name": "Saint Lucia",
+            "longName": "Saint Lucia",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 178696
+        },
+        "LI": {
+            "name": "Liechtenstein",
+            "longName": "The Principality of Liechtenstein",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 38557
+        },
+        "LK": {
+            "name": "Sri Lanka",
+            "longName": "The Democratic Socialist Republic of Sri Lanka",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 21803000
+        },
+        "LR": {
+            "name": "Liberia",
+            "longName": "The Republic of Liberia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 4475353
+        },
+        "LS": {
+            "name": "Lesotho",
+            "longName": "The Kingdom of Lesotho",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 2007201
+        },
+        "LT": {
+            "name": "Lithuania",
+            "longName": "The Republic of Lithuania",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 2793350
+        },
+        "LU": {
+            "name": "Luxembourg",
+            "longName": "The Grand Duchy of Luxembourg",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 613894
+        },
+        "LV": {
+            "name": "Latvia",
+            "longName": "The Republic of Latvia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 1906800
+        },
+        "LY": {
+            "name": "Libya",
+            "longName": "The State of Libya",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 6871287
+        },
+        "MA": {
+            "name": "Morocco",
+            "longName": "The Kingdom of Morocco",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 35839345
+        },
+        "MC": {
+            "name": "Monaco",
+            "longName": "The Principality of Monaco",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 38300
+        },
+        "MD": {
+            "name": "Moldova",
+            "longName": "The Republic of Moldova",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 2681735
+        },
+        "ME": {
+            "name": "Montenegro",
+            "longName": "Montenegro",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 622359
+        },
+        "MF": {
+            "name": "St Martin",
+            "longName": "The Collectivity of Saint-Martin",
+            "sovereignty": "France",
+            "region": "NA",
+            "population": 35107
+        },
+        "MG": {
+            "name": "Madagascar",
+            "longName": "The Republic of Madagascar",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 25680342
+        },
+        "MH": {
+            "name": "Marshall Islands",
+            "longName": "The Republic of the Marshall Islands",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 58413
+        },
+        "MK": {
+            "name": "North Macedonia",
+            "longName": "Republic of North Macedonia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 2077132
+        },
+        "ML": {
+            "name": "Mali",
+            "longName": "The Republic of Mali",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 19973000
+        },
+        "MM": {
+            "name": "Myanmar",
+            "longName": "The Republic of the Union of Myanmar",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 54339766
+        },
+        "MN": {
+            "name": "Mongolia",
+            "longName": "The State of Mongolia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 3307640
+        },
+        "MO": {
+            "name": "Macao",
+            "longName": "Macao Special Administrative Region of China",
+            "sovereignty": "China",
+            "region": "AS",
+            "population": 667400
+        },
+        "MP": {
+            "name": "Northern Mariana Islands",
+            "longName": "The Commonwealth of the Northern Mariana Islands",
+            "sovereignty": "United States",
+            "region": "AS",
+            "population": 53883
+        },
+        "MQ": {
+            "name": "Martinique",
+            "longName": "Martinique",
+            "sovereignty": "France",
+            "region": "NA",
+            "population": 376480
+        },
+        "MR": {
+            "name": "Mauritania",
+            "longName": "The Islamic Republic of Mauritania",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 4077347
+        },
+        "MS": {
+            "name": "Montserrat",
+            "longName": "Montserrat",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 4989
+        },
+        "MT": {
+            "name": "Malta",
+            "longName": "The Republic of Malta",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 493559
+        },
+        "MU": {
+            "name": "Mauritius",
+            "longName": "The Republic of Mauritius",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 1265985
+        },
+        "MV": {
+            "name": "Maldives",
+            "longName": "The Republic of Maldives",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 374775
+        },
+        "MW": {
+            "name": "Malawi",
+            "longName": "The Republic of Malawi",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 17563749
+        },
+        "MX": {
+            "name": "Mexico",
+            "longName": "The United Mexican States",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 126577691
+        },
+        "MY": {
+            "name": "Malaysia",
+            "longName": "Malaysia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 32719760
+        },
+        "MZ": {
+            "name": "Mozambique",
+            "longName": "The Republic of Mozambique",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 30066648
+        },
+        "NA": {
+            "name": "Namibia",
+            "longName": "The Republic of Namibia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 2458936
+        },
+        "NC": {
+            "name": "New Caledonia",
+            "longName": "New Caledonia",
+            "sovereignty": "France",
+            "region": "OC",
+            "population": 282200
+        },
+        "NE": {
+            "name": "Niger",
+            "longName": "The Republic of the Niger",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 22314743
+        },
+        "NF": {
+            "name": "Norfolk Island",
+            "longName": "The Territory of Norfolk Island",
+            "sovereignty": "Australia",
+            "region": "OC",
+            "population": 1748
+        },
+        "NG": {
+            "name": "Nigeria",
+            "longName": "The Federal Republic of Nigeria",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 206139587
+        },
+        "NI": {
+            "name": "Nicaragua",
+            "longName": "The Republic of Nicaragua",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 6460411
+        },
+        "NL": {
+            "name": "Netherlands",
+            "longName": "The Kingdom of the Netherlands",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 17444731
+        },
+        "NO": {
+            "name": "Norway",
+            "longName": "The Kingdom of Norway",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 5367580
+        },
+        "NP": {
+            "name": "Nepal",
+            "longName": "The Federal Democratic Republic of Nepal",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 29609623
+        },
+        "NR": {
+            "name": "Nauru",
+            "longName": "The Republic of Nauru",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 11000
+        },
+        "NU": {
+            "name": "Niue",
+            "longName": "Niue",
+            "sovereignty": "New Zealand",
+            "region": "OC",
+            "population": 1620
+        },
+        "NZ": {
+            "name": "New Zealand",
+            "longName": "New Zealand",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 4970447
+        },
+        "OM": {
+            "name": "Oman",
+            "longName": "The Sultanate of Oman",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 4664790
+        },
+        "PA": {
+            "name": "Panama",
+            "longName": "The Republic of Panamá",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 4218808
+        },
+        "PE": {
+            "name": "Peru",
+            "longName": "The Republic of Perú",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 32131400
+        },
+        "PF": {
+            "name": "French Polynesia",
+            "longName": "French Polynesia",
+            "sovereignty": "France",
+            "region": "OC",
+            "population": 275918
+        },
+        "PG": {
+            "name": "Papua New Guinea",
+            "longName": "The Independent State of Papua New Guinea",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 8935000
+        },
+        "PH": {
+            "name": "Philippines",
+            "longName": "The Republic of the Philippines",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 108407287
+        },
+        "PK": {
+            "name": "Pakistan",
+            "longName": "The Islamic Republic of Pakistan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 218950520
+        },
+        "PL": {
+            "name": "Poland",
+            "longName": "The Republic of Poland",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 38386000
+        },
+        "PM": {
+            "name": "Saint Pierre and Miquelon",
+            "longName": "The Overseas Collectivity of Saint-Pierre and Miquelon",
+            "sovereignty": "France",
+            "region": "NA",
+            "population": 6008
+        },
+        "PN": {
+            "name": "Pitcairn Islands",
+            "longName": "The Pitcairn, Henderson, Ducie and Oeno Islands",
+            "sovereignty": "United Kingdom",
+            "region": "OC",
+            "population": 50
+        },
+        "PR": {
+            "name": "Puerto Rico",
+            "longName": "The Commonwealth of Puerto Rico",
+            "sovereignty": "United States",
+            "region": "NA",
+            "population": 3193694
+        },
+        "PS": {
+            "name": "Palestine",
+            "longName": "The State of Palestine",
+            "altNames": "State of Palestine",
+            "sovereignty": "UN observer",
+            "region": "AS",
+            "population": 4976684
+        },
+        "PT": {
+            "name": "Portugal",
+            "longName": "The Portuguese Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 10276617
+        },
+        "PW": {
+            "name": "Palau",
+            "longName": "The Republic of Palau",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 17907
+        },
+        "PY": {
+            "name": "Paraguay",
+            "longName": "The Republic of Paraguay",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 7152703
+        },
+        "QA": {
+            "name": "Qatar",
+            "longName": "The State of Qatar",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 2747282
+        },
+        "RE": {
+            "name": "Reunion",
+            "longName": "Réunion",
+            "sovereignty": "France",
+            "region": "AF",
+            "population": 859959
+        },
+        "RO": {
+            "name": "Romania",
+            "longName": "Romania",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 19405156
+        },
+        "RS": {
+            "name": "Serbia",
+            "longName": "The Republic of Serbia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 6963764
+        },
+        "RU": {
+            "name": "Russia",
+            "longName": "The Russian Federation",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 146745098
+        },
+        "RW": {
+            "name": "Rwanda",
+            "longName": "The Republic of Rwanda",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 12374397
+        },
+        "SA": {
+            "name": "Saudi Arabia",
+            "longName": "The Kingdom of Saudi Arabia",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 34218169
+        },
+        "SB": {
+            "name": "Solomon Islands",
+            "longName": "The Solomon Islands",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 680806
+        },
+        "SC": {
+            "name": "Seychelles",
+            "longName": "The Republic of Seychelles",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 97625
+        },
+        "SD": {
+            "name": "Sudan",
+            "longName": "The Republic of the Sudan",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 42345710
+        },
+        "SE": {
+            "name": "Sweden",
+            "longName": "The Kingdom of Sweden",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 10333456
+        },
+        "SG": {
+            "name": "Singapore",
+            "longName": "The Republic of Singapore",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 5703600
+        },
+        "SH": {
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "longName": "Saint Helena, Ascension and Tristan da Cunha",
+            "sovereignty": "United Kingdom",
+            "region": "AF",
+            "population": 5633
+        },
+        "SI": {
+            "name": "Slovenia",
+            "longName": "The Republic of Slovenia",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 2094060
+        },
+        "SJ": {
+            "name": "Svalbard and Jan Mayen",
+            "longName": "Svalbard and Jan Mayen",
+            "sovereignty": "Norway",
+            "region": "EU",
+            "population": 0
+        },
+        "SK": {
+            "name": "Slovakia",
+            "longName": "The Slovak Republic",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 5456362
+        },
+        "SL": {
+            "name": "Sierra Leone",
+            "longName": "The Republic of Sierra Leone",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 7901454
+        },
+        "SM": {
+            "name": "San Marino",
+            "longName": "The Republic of San Marino",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 33344
+        },
+        "SN": {
+            "name": "Senegal",
+            "longName": "The Republic of Senegal",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 16209125
+        },
+        "SO": {
+            "name": "Somalia",
+            "longName": "The Federal Republic of Somalia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 15893219
+        },
+        "SR": {
+            "name": "Suriname",
+            "longName": "The Republic of Suriname",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 581372
+        },
+        "SS": {
+            "name": "South Sudan",
+            "longName": "The Republic of South Sudan",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 12778250
+        },
+        "ST": {
+            "name": "Sao Tome and Principe",
+            "longName": "The Democratic Republic of São Tomé and Príncipe",
+            "altNames": "São Tomé and Príncipe",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 201784
+        },
+        "SV": {
+            "name": "El Salvador",
+            "longName": "The Republic of El Salvador",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 6486201
+        },
+        "SX": {
+            "name": "Sint Maarten",
+            "longName": "Sint Maarten",
+            "sovereignty": "Netherlands",
+            "region": "NA",
+            "population": 41486
+        },
+        "SY": {
+            "name": "Syria",
+            "longName": "The Syrian Arab Republic",
+            "altNames": "Syrian Arab Republic",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 17500657
+        },
+        "SZ": {
+            "name": "Eswatini",
+            "longName": "The Kingdom of Eswatini",
+            "altNames": "Swaziland",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 1093238
+        },
+        "TC": {
+            "name": "Turks and Caicos Islands",
+            "longName": "The Turks and Caicos Islands",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 41369
+        },
+        "TD": {
+            "name": "Chad",
+            "longName": "The Republic of Chad",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 15692969
+        },
+        "TF": {
+            "name": "French Southern Territories",
+            "longName": "The French Southern and Antarctic Lands",
+            "sovereignty": "France",
+            "region": "AF",
+            "population": 0
+        },
+        "TG": {
+            "name": "Togo",
+            "longName": "The Togolese Republic",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 7538000
+        },
+        "TH": {
+            "name": "Thailand",
+            "longName": "The Kingdom of Thailand",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 66481630
+        },
+        "TJ": {
+            "name": "Tajikistan",
+            "longName": "The Republic of Tajikistan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 9127000
+        },
+        "TK": {
+            "name": "Tokelau",
+            "longName": "Tokelau",
+            "sovereignty": "New Zealand",
+            "region": "OC",
+            "population": 1499
+        },
+        "TL": {
+            "name": "Timor-Leste (East Timor)",
+            "longName": "The Democratic Republic of Timor-Leste",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 1387149
+        },
+        "TM": {
+            "name": "Turkmenistan",
+            "longName": "Turkmenistan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 6031187
+        },
+        "TN": {
+            "name": "Tunisia",
+            "longName": "The Republic of Tunisia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 11722038
+        },
+        "TO": {
+            "name": "Tonga",
+            "longName": "The Kingdom of Tonga",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 100651
+        },
+        "TR": {
+            "name": "Turkey",
+            "longName": "The Republic of Turkey",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 83154997
+        },
+        "TT": {
+            "name": "Trinidad and Tobago",
+            "longName": "The Republic of Trinidad and Tobago",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 1363985
+        },
+        "TV": {
+            "name": "Tuvalu",
+            "longName": "Tuvalu",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 11192
+        },
+        "TW": {
+            "name": "Taiwan",
+            "longName": "The Republic of China",
+            "sovereignty": "disputed",
+            "region": "AS",
+            "population": 23604265
+        },
+        "TZ": {
+            "name": "Tanzania",
+            "longName": "The United Republic of Tanzania",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 55890747
+        },
+        "UA": {
+            "name": "Ukraine",
+            "longName": "Ukraine",
+            "sovereignty": "UN",
+            "region": "EU",
+            "population": 41902416
+        },
+        "UG": {
+            "name": "Uganda",
+            "longName": "The Republic of Uganda",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 40299300
+        },
+        "UM": {
+            "name": "United States Minor Outlying Islands",
+            "longName": "Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Atoll, Navassa Island, Palmyra Atoll, and Wake Island",
+            "sovereignty": "United States",
+            "region": "OC",
+            "population": 0
+        },
+        "US": {
+            "name": "United States",
+            "longName": "The United States of America",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 329453849
+        },
+        "UY": {
+            "name": "Uruguay",
+            "longName": "The Oriental Republic of Uruguay",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 3518552
+        },
+        "UZ": {
+            "name": "Uzbekistan",
+            "longName": "The Republic of Uzbekistan",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 34070275
+        },
+        "VA": {
+            "name": "Holy See",
+            "longName": "The Holy See",
+            "sovereignty": "UN observer",
+            "region": "EU",
+            "population": 1000
+        },
+        "VC": {
+            "name": "Saint Vincent and the Grenadines",
+            "longName": "Saint Vincent and the Grenadines",
+            "sovereignty": "UN",
+            "region": "NA",
+            "population": 110211
+        },
+        "VE": {
+            "name": "Venezuela",
+            "longName": "The Bolivarian Republic of Venezuela",
+            "sovereignty": "UN",
+            "region": "SA",
+            "population": 32219521
+        },
+        "VG": {
+            "name": "British Virgin Islands",
+            "longName": "The Virgin Islands",
+            "sovereignty": "United Kingdom",
+            "region": "NA",
+            "population": 30030
+        },
+        "VI": {
+            "name": "Virgin Islands (U.S.)",
+            "longName": "The Virgin Islands of the United States",
+            "sovereignty": "United States",
+            "region": "NA",
+            "population": 104578
+        },
+        "VN": {
+            "name": "Viet Nam",
+            "longName": "The Socialist Republic of Viet Nam",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 96208984
+        },
+        "VU": {
+            "name": "Vanuatu",
+            "longName": "The Republic of Vanuatu",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 304500
+        },
+        "WF": {
+            "name": "Wallis and Futuna",
+            "longName": "The Territory of the Wallis and Futuna Islands",
+            "sovereignty": "France",
+            "region": "OC",
+            "population": 11558
+        },
+        "WS": {
+            "name": "Samoa",
+            "longName": "The Independent State of Samoa",
+            "sovereignty": "UN",
+            "region": "OC",
+            "population": 195843
+        },
+        "XK": {
+            "name": "Kosovo",
+            "longName": "The Republic of Kosovo",
+            "sovereignty": "disputed",
+            "region": "EU",
+            "population": 1810463
+        },
+        "YE": {
+            "name": "Yemen",
+            "longName": "The Republic of Yemen",
+            "sovereignty": "UN",
+            "region": "AS",
+            "population": 29825968
+        },
+        "YT": {
+            "name": "Mayotte",
+            "longName": "The Department of Mayotte",
+            "sovereignty": "France",
+            "region": "AF",
+            "population": 279471
+        },
+        "ZA": {
+            "name": "South Africa",
+            "longName": "The Republic of South Africa",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 58775022
+        },
+        "ZM": {
+            "name": "Zambia",
+            "longName": "The Republic of Zambia",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 17381168
+        },
+        "ZW": {
+            "name": "Zimbabwe",
+            "longName": "The Republic of Zimbabwe",
+            "sovereignty": "UN",
+            "region": "AF",
+            "population": 15159624
+        }
+    };
+
+    class GuessGame {
+        constructor() {
+            this.countries = Object.keys(countryData).filter(key => key !== "World");
+            this.country = this.countries[Math.floor(Math.random() * this.countries.length)];
+            this.skips = 0;
+            this.correct = 0;
+            this.incorrect = 0;
+        }
+        newCountry() {
+            this.country = this.countries[Math.floor(Math.random() * this.countries.length)];
+        }
+        skip() {
+            this.newCountry();
+            this.skips += 1;
+        }
+        guess() {
+            if (this.selected !== this.country)
+                return false;
+            this.newCountry();
+            return true;
+        }
+        onClick() {
+            if (!this.selected)
+                return;
+            console.log(this);
+            console.log(this.guess());
+        }
+    }
+
+    const colors = {
+        "ocean": "#84DFFF",
+        "country": "#65C18C",
+        "hover": "#C1F4C5"
+    };
+    class Map$1 {
+        constructor(game) {
+            this.game = game;
+            this.countrySvgs = {};
+            document.body.style.backgroundColor = colors.ocean;
+        }
+        loadMap() {
+            const container = document.createElement("div");
+            container.setAttribute("id", "mapContainer");
+            document.body.prepend(container);
+            this.svg = document.createElement("object");
+            this.svg.setAttribute("id", "map");
+            this.svg.setAttribute("type", "image/svg+xml");
+            this.svg.setAttribute("data", "./map.svg");
+            container.appendChild(this.svg);
+            const style = document.createElement("style");
+            style.innerHTML = "#mapContainer, #map { width: 100%; height: 100%; }";
+            document.head.appendChild(style);
+            this.svg.onload = () => {
+                var _a, _b, _c, _d;
+                (_d = (_c = (_b = (_a = this.svg) === null || _a === void 0 ? void 0 : _a.getSVGDocument()) === null || _b === void 0 ? void 0 : _b.children[0]) === null || _c === void 0 ? void 0 : _c.childNodes) === null || _d === void 0 ? void 0 : _d.forEach((_node) => {
+                    const node = _node;
+                    if (node.id != undefined && node.id.substr(0, 1) != "_" && (node.tagName == "g" || node.tagName == "path" || node.tagName == "rect")) {
+                        this.countrySvgs[node.id] = node;
+                    }
+                });
+                this.countrySvgs["Ocean"].style.fill = colors.ocean;
+                this.countrySvgs["World"].style.fill = colors.ocean;
+                delete this.countrySvgs["Ocean"];
+                delete this.countrySvgs["World"];
+                const hover = (svg, color) => {
+                    svg.style.fill = color;
+                };
+                const hoverChildren = (svg, color) => {
+                    svg.childNodes.forEach((svg) => {
+                        if (svg.tagName === "g") {
+                            hoverChildren(svg, color);
+                        }
+                        else if (svg.tagName === "path" || svg.tagName === "circle") {
+                            hover(svg, color);
+                        }
+                    });
+                };
+                Object.keys(this.countrySvgs).forEach((key) => {
+                    const country = this.countrySvgs[key];
+                    // hoverChildren(country, colors.country)
+                    country.addEventListener("mouseover", () => {
+                        this.game.selected = key;
+                        if (country.tagName === "g") {
+                            hoverChildren(country, colors.hover);
+                            this.rerender();
+                        }
+                    });
+                    country.addEventListener("mouseout", () => {
+                        this.game.selected = undefined;
+                        if (country.tagName === "g") {
+                            hoverChildren(country, colors.country);
+                            this.rerender();
+                        }
+                    });
+                    country.addEventListener("mouseup", () => this.game.onClick());
+                });
+            };
+        }
+        rerender() {
+            map.update((v) => v);
+        }
+    }
+    const map = writable(new Map$1(new GuessGame()));
+
+    /* src/map/infoBox.svelte generated by Svelte v3.46.4 */
+    const file$1 = "src/map/infoBox.svelte";
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let t0;
+
+    	let t1_value = (/*$map*/ ctx[0].game.selected === undefined
+    	? "None"
+    	: countryData[/*$map*/ ctx[0].game.selected].name) + "";
+
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t0 = text("Selected: ");
+    			t1 = text(t1_value);
+    			attr_dev(div, "class", "infoBox svelte-1u8q10l");
+    			add_location(div, file$1, 5, 0, 99);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*$map*/ 1 && t1_value !== (t1_value = (/*$map*/ ctx[0].game.selected === undefined
+    			? "None"
+    			: countryData[/*$map*/ ctx[0].game.selected].name) + "")) set_data_dev(t1, t1_value);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let $map;
+    	validate_store(map, 'map');
+    	component_subscribe($$self, map, $$value => $$invalidate(0, $map = $$value));
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('InfoBox', slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<InfoBox> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ countryData, map, $map });
+    	return [$map];
+    }
+
+    class InfoBox extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "InfoBox",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.46.4 */
+    const file = "src/App.svelte";
+
+    function create_fragment(ctx) {
+    	let main;
+    	let infobox;
+    	let current;
+    	infobox = new InfoBox({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			create_component(infobox.$$.fragment);
+    			add_location(main, file, 5, 0, 122);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			mount_component(infobox, main, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(infobox.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(infobox.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_component(infobox);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let $map;
+    	validate_store(map, 'map');
+    	component_subscribe($$self, map, $$value => $$invalidate(0, $map = $$value));
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+    	$map.loadMap();
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ map, InfoBox, $map });
+    	return [];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+        target: document.body
+    });
+
+    return app;
+
+})();
 //# sourceMappingURL=bundle.js.map

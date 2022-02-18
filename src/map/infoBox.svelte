@@ -3,7 +3,7 @@
     import { map } from "./map";
 </script>
 
-<div class="infoBox">Selected: {$map.selectedCountry === undefined ? "None" : countryData[$map.selectedCountry]?.name}</div>
+<div class="infoBox">Selected: {$map.game.selected === undefined ? "None" : countryData[$map.game.selected].name}</div>
 
 <style>
     .infoBox {
