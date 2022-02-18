@@ -24,12 +24,16 @@ class GuessGame implements MapGame {
 
     skip() {
         this.newCountry()
-        this.skips += 1
+        this.skips++
     }
 
     guess() {
-        if (this.selected !== this.country) return false
+        if (this.selected !== this.country) {
+            this.incorrect++
+            return false
+        }
         this.newCountry()
+        this.correct++
         return true
     }
 
