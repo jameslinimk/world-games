@@ -14,8 +14,12 @@ class Popups {
     }
 
     add(message: string, delay = 2000, color = "bg-white") {
-        this.popups[this.id] = { message, delay, color }
+        this.popups[`${this.id}`] = { message, delay, color }
+
+        const id = this.id
+        setTimeout(() => this.remove(`${id}`), delay)
         this.id += 1
+
         popups.update((v) => v)
     }
 }

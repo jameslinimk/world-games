@@ -47,9 +47,17 @@ class GuessGame implements MapGame {
     }
 
     skip() {
-        this.newCountry()
         this.skips++
+        this.guesses = 0
+
+        this.excludedCountries.push(this.country)
+        this.incorrectCountries.push(this.country)
+
+        this.rerenderCountry(this.country)
+        this.newCountry()
         this.rerender()
+
+        get(popups).add("Skipped!", 2000, "bg-yellow-400")
     }
 
     guess() {
@@ -61,17 +69,20 @@ class GuessGame implements MapGame {
             if (this.guesses > this.maxGuesses) {
                 /* ---------------------------------- Lost ---------------------------------- */
                 this.incorrect++
-                this.rerenderCountry(this.country)
-                this.newCountry()
                 this.guesses = 0
 
                 this.excludedCountries.push(this.country)
                 this.incorrectCountries.push(this.country)
 
-                get(popups).add("Incorrect", 2000, "bg-red-400")
+                this.rerenderCountry(this.country)
+
+                this.newCountry()
+
+                get(popups).add("Better luck next time!", 2000, "bg-red-400")
                 return false
             }
 
+            get(popups).add("Incorrect", 2000, "bg-red-400")
             return false
         }
 
@@ -85,8 +96,10 @@ class GuessGame implements MapGame {
         }
         this.excludedCountries.push(this.country)
         this.guesses = 0
+
         this.rerenderCountry(this.country)
         this.newCountry()
+
         get(popups).add("You got it!", 2000, "bg-green-400")
         return true
     }
@@ -96,8 +109,6 @@ class GuessGame implements MapGame {
 
         this.guess()
         this.rerender()
-
-        console.table([this.excludedCountries, this.correctCountries, this.semiCorrectCountries, this.incorrectCountries])
     }
 }
 

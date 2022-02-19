@@ -1,4 +1,6 @@
 import { writable } from "svelte/store"
+import svgPanZoom from "svg-pan-zoom"
+import countryData from "./country-data"
 import type { MapGame } from "./games/game"
 import GuessGame from "./games/guess"
 
@@ -13,12 +15,14 @@ const colors = {
 
 class Map {
     countrySvgs: { [key: string]: SVGAElement }
+    countryLabels: { [key: string]: HTMLTextAreaElement }
     game: MapGame
 
     constructor(Game: typeof GuessGame) {
         this.game = new Game(() => this.rerender(), (countryKey: string) => this.rerenderCountry(countryKey))
 
         this.countrySvgs = {}
+        this.countryLabels = {}
         document.body.style.backgroundColor = colors.ocean
     }
 
@@ -43,6 +47,13 @@ class Map {
         return colors.country
     }
 
+    showLabel(country: string) {
+        if (this.game.correctCountries.includes(country)) return true
+        if (this.game.incorrectCountries.includes(country)) return true
+        if (this.game.semiCorrectCountries.includes(country)) return true
+        return false
+    }
+
     loadMap() {
         const container = document.createElement("div")
         container.setAttribute("id", "mapContainer")
@@ -51,14 +62,23 @@ class Map {
         const svgObject = document.createElement("object")
         svgObject.setAttribute("id", "map")
         svgObject.setAttribute("type", "image/svg+xml")
-        svgObject.setAttribute("data", "./map.svg")
+        svgObject.setAttribute("data", "./public/map.svg")
+        // svgObject.setAttribute("data", "./map.svg")
         container.appendChild(svgObject)
         const style = document.createElement("style")
-        style.innerHTML = "#mapContainer, #map { width: 100%; height: 100%; }"
+        style.innerHTML = `
+#mapContainer, #map {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes pop {
+    50% { transform: scale(500); }
+}`
         document.head.appendChild(style)
 
         svgObject.onload = () => {
-            const svg = svgObject?.getSVGDocument()?.children?.[0]
+            const svg = <SVGAElement>svgObject?.getSVGDocument()?.children?.[0]
             if (!svg) throw new Error()
 
             svg.childNodes.forEach((_node) => {
@@ -74,6 +94,19 @@ class Map {
             delete this.countrySvgs["Ocean"]
             delete this.countrySvgs["World"]
 
+            /* --------------------------------- Labels --------------------------------- */
+            this.countrySvgs["labels"].childNodes.forEach((_label) => {
+                const label = <HTMLTextAreaElement>_label
+                // Skip non-<text> text 
+                if (label.tagName == "text") {
+                    const countryId = label.id.substr(0, 2)
+                    this.countryLabels[countryId] = label
+                    if (label.textContent != countryData[countryId].name) label.textContent = countryData[countryId].name
+
+                    label.setAttribute("display", "none")
+                }
+            })
+
             Object.keys(this.countrySvgs).forEach((key) => {
                 const country = this.countrySvgs[key]
                 // hoverChildren(country, colors.country)
@@ -83,6 +116,9 @@ class Map {
                     if (country.tagName === "g") {
                         this.hoverChildren(country, colors.hover)
                         this.rerender()
+                        if (this.showLabel(key) && this.countryLabels[key]) {
+                            this.countryLabels[key].setAttribute("display", "block")
+                        }
                     }
                 })
 
@@ -91,79 +127,63 @@ class Map {
                     if (country.tagName === "g") {
                         this.hoverChildren(country, this.getColor(key))
                         this.rerender()
+                        if (this.showLabel(key) && this.countryLabels[key]) {
+                            this.countryLabels[key].setAttribute("display", "block")
+                        }
                     }
                 })
 
-                country.addEventListener("mouseup", () => this.game.onClick())
+                let doubleClick = false
+                let firstClick: number
+                country.addEventListener("mouseup", () => {
+                    if (doubleClick === false) {
+                        doubleClick = true
+                        firstClick = performance.now()
+                        return
+                    }
+
+                    if (performance.now() - firstClick > 750) {
+                        doubleClick = false
+                        return
+                    }
+
+                    doubleClick = false
+                    this.game.onClick()
+                })
             })
 
-            /* ------------------------------ Panning stuff ----------------------------- */
-            const viewBox = { x: 0, y: 0, w: svg.clientWidth, h: svg.clientHeight }
-            const applyViewBox = (viewBox: { x: number; y: number; w: number; h: number }) => svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`)
-            // applyViewBox(viewBox)
-            const svgSize = { w: svg.clientWidth, h: svg.clientHeight }
-            let isPanning = false
-            const startPoint = { x: 0, y: 0 }
-            const endPoint = { x: 0, y: 0 }
-            let scale = 1
-
-            svg.addEventListener("wheel", (event: WheelEvent) => {
-                const w = viewBox.w
-                const h = viewBox.h
-                const mx = event.offsetX
-                const my = event.offsetY
-                const dw = w * Math.sign(event.deltaY) * 0.05
-                const dh = h * Math.sign(event.deltaY) * 0.05
-                const dx = dw * mx / svgSize.w
-                const dy = dh * my / svgSize.h
-                viewBox.x = viewBox.x + dx
-                viewBox.y = viewBox.y + dy
-                viewBox.w = viewBox.w - dw
-                viewBox.h = viewBox.h - dh
-                scale = svgSize.w / viewBox.w
-                applyViewBox(viewBox)
-            })
-
-            svg.addEventListener("mousedown", (event: MouseEvent) => {
-                isPanning = true
-                startPoint.x = event.x
-                startPoint.y = event.y
-            })
-
-            svg.addEventListener("mousemove", (event: MouseEvent) => {
-                if (!isPanning) return
-                endPoint.x = event.x
-                endPoint.y = event.y
-                const dx = (startPoint.x - endPoint.x) / scale
-                const dy = (startPoint.y - endPoint.y) / scale
-                applyViewBox({ x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w, h: viewBox.h })
-            })
-
-            svg.addEventListener("mouseup", (event: MouseEvent) => {
-                if (!isPanning) return
-
-                endPoint.x = event.x
-                endPoint.y = event.y
-                const dx = (startPoint.x - endPoint.x) / scale
-                const dy = (startPoint.y - endPoint.y) / scale
-                viewBox.x = viewBox.x + dx
-                viewBox.y = viewBox.y + dy
-                viewBox.w = viewBox.w
-                viewBox.h = viewBox.h
-                applyViewBox(viewBox)
-                isPanning = false
-            })
-
-            svg.addEventListener("mouseleave", () => {
-                isPanning = false
+            svgPanZoom(svg, {
+                dblClickZoomEnabled: false
             })
         }
+    }
+
+    pop(svg: SVGAElement) {
+        console.log("Before", svg.style.animation)
+        svg.style.animation = "pop 5s linear 1"
+        console.log("After", svg.style.animation)
+    }
+
+    popChildren(svg: SVGAElement) {
+        svg.childNodes.forEach((svg: SVGAElement) => {
+            if (svg.tagName === "g") {
+                this.popChildren(svg)
+            } else if (svg.tagName === "path" || svg.tagName === "circle") {
+                this.pop(svg)
+            }
+        })
     }
 
     rerenderCountry(countryKey: string) {
         const country = this.countrySvgs[countryKey]
         if (!country) return
+
+        this.popChildren(country)
+
         this.hoverChildren(country, this.getColor(countryKey))
+        if (this.showLabel(countryKey) && this.countryLabels[countryKey]) {
+            this.countryLabels[countryKey].setAttribute("display", "block")
+        }
     }
 
     rerender() {
