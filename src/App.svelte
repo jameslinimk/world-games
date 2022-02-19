@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { map } from "./map/map";
 	import InfoBox from "./map/infoBox.svelte";
+	import Popups from "./componenets/popups.svelte";
 
 	$map.loadMap();
 </script>
 
-<main>
-	<InfoBox />
-</main>
+<InfoBox />
+<Popups />
 
-<style>
+<style global lang="postcss">
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 </style>
