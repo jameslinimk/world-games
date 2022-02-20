@@ -737,13 +737,13 @@ const countryData: {
 		"region": "SA",
 		"population": 782766
 	},
-	"HK": {
-		"name": "Hong Kong",
-		"longName": "The Hong Kong Special Administrative Region of China",
-		"sovereignty": "China",
-		"region": "AS",
-		"population": 7500700
-	},
+	// "HK": {
+	// 	"name": "Hong Kong",
+	// 	"longName": "The Hong Kong Special Administrative Region of China",
+	// 	"sovereignty": "China",
+	// 	"region": "AS",
+	// 	"population": 7500700
+	// },
 	"HM": {
 		"name": "Heard Island and McDonald Islands",
 		"longName": "The Territory of Heard Island and McDonald Islands",
@@ -1108,13 +1108,13 @@ const countryData: {
 		"region": "AS",
 		"population": 3307640
 	},
-	"MO": {
-		"name": "Macao",
-		"longName": "Macao Special Administrative Region of China",
-		"sovereignty": "China",
-		"region": "AS",
-		"population": 667400
-	},
+	// "MO": {
+	// 	"name": "Macao",
+	// 	"longName": "Macao Special Administrative Region of China",
+	// 	"sovereignty": "China",
+	// 	"region": "AS",
+	// 	"population": 667400
+	// },
 	"MP": {
 		"name": "Northern Mariana Islands",
 		"longName": "The Commonwealth of the Northern Mariana Islands",
