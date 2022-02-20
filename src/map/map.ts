@@ -155,6 +155,8 @@ class Map {
                     }
                 }
 
+                let doubleClick = false
+                let firstClick: number
                 const mouseUp = () => {
                     if (doubleClick === false) {
                         doubleClick = true
@@ -173,15 +175,14 @@ class Map {
 
                 country.addEventListener("mouseover", mouseOver)
                 country.addEventListener("mouseout", mouseOut)
-                let doubleClick = false
-                let firstClick: number
+
                 country.addEventListener("mouseup", mouseUp)
 
                 const smallLabel = this.smallCountryLabels[key]
                 if (!smallLabel) return
                 smallLabel.addEventListener("mouseover", mouseOver)
                 smallLabel.addEventListener("mouseout", mouseOut)
-                country.addEventListener("mouseup", mouseUp)
+                smallLabel.addEventListener("mouseup", mouseUp)
             })
 
             this.panZoom = svgPanZoom(svg, {
