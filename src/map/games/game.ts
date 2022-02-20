@@ -1,21 +1,6 @@
 interface MapGame {
-    skips: number
-    correct: number
-    semiCorrect: number
-    incorrect: number
-
-    /**
-     * Countries that will be labeled as correct
-     */
-    correctCountries: string[]
-    /**
-     * Countries that will be labeled and semiCorrect
-     */
-    semiCorrectCountries: string[]
-    /**
-     * Countries that will be labeled as incorrect
-     */
-    incorrectCountries: string[]
+    stats: { [key: string]: { display: string, value: number } }
+    countryColors: { [key: string]: string }
 
     country: string
     selected?: string
@@ -27,8 +12,13 @@ interface MapGame {
 
     guesses: number
     maxGuesses: number
+
+    end: boolean
+    endedAt: number
+    started: number
+    getEndStats: () => { display: string, value: number | string }[]
+
+    helpBoxHTML: string
 }
 
-export type {
-    MapGame
-}
+export default MapGame

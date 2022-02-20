@@ -1,17 +1,9 @@
 import { writable } from "svelte/store"
 import svgPanZoom from "svg-pan-zoom"
+import colors from "../colors"
 import countryData from "./country-data"
-import type { MapGame } from "./games/game"
+import type MapGame from "./games/game"
 import GuessGame from "./games/guess"
-
-const colors = {
-    "ocean": "#84DFFF",
-    "country": "#65C18C",
-    "hover": "#C1F4C5",
-    "correct": "#C2F784",
-    "semiCorrect": "#FFFDA2",
-    "incorrect": "#FE9898"
-}
 
 class Map {
     countrySvgs: { [key: string]: SVGAElement }
@@ -40,19 +32,8 @@ class Map {
         })
     }
 
-    getColor(country: string) {
-        if (this.game.correctCountries.includes(country)) return colors.correct
-        if (this.game.incorrectCountries.includes(country)) return colors.incorrect
-        if (this.game.semiCorrectCountries.includes(country)) return colors.semiCorrect
-        return colors.country
-    }
-
-    showLabel(country: string) {
-        if (this.game.correctCountries.includes(country)) return true
-        if (this.game.incorrectCountries.includes(country)) return true
-        if (this.game.semiCorrectCountries.includes(country)) return true
-        return false
-    }
+    getColor = (country: string) => (this.game.countryColors[country]) ? this.game.countryColors[country] : colors.country
+    showLabel = (country: string) => Object.keys(this.game.countryColors).includes(country)
 
     loadMap() {
         const container = document.createElement("div")
@@ -66,15 +47,7 @@ class Map {
         // svgObject.setAttribute("data", "./map.svg")
         container.appendChild(svgObject)
         const style = document.createElement("style")
-        style.innerHTML = `
-#mapContainer, #map {
-    width: 100%;
-    height: 100%;
-}
-
-@keyframes pop {
-    50% { transform: scale(500); }
-}`
+        style.innerHTML = "#mapContainer, #map { width: 100%; height: 100%; }"
         document.head.appendChild(style)
 
         svgObject.onload = () => {
@@ -85,6 +58,16 @@ class Map {
                 const node = <SVGAElement>_node
                 if (node.id != undefined && node.id.substr(0, 1) != "_" && (node.tagName == "g" || node.tagName == "path" || node.tagName == "rect")) {
                     this.countrySvgs[node.id] = node
+
+                    const animation = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform")
+                    animation.setAttribute("attributeName", "transform")
+                    animation.setAttribute("type", "scale")
+                    animation.setAttribute("additive", "sum")
+                    animation.setAttribute("from", "0 0")
+                    animation.setAttribute("to", "1 1")
+                    animation.setAttribute("begin", "indefinite")
+                    animation.setAttribute("dur", "1s")
+                    node.appendChild(animation)
                 }
             })
 
@@ -159,26 +142,15 @@ class Map {
     }
 
     pop(svg: SVGAElement) {
-        console.log("Before", svg.style.animation)
-        svg.style.animation = "pop 5s linear 1"
-        console.log("After", svg.style.animation)
-    }
-
-    popChildren(svg: SVGAElement) {
-        svg.childNodes.forEach((svg: SVGAElement) => {
-            if (svg.tagName === "g") {
-                this.popChildren(svg)
-            } else if (svg.tagName === "path" || svg.tagName === "circle") {
-                this.pop(svg)
-            }
-        })
+        const animation = <SVGAnimateTransformElement>svg.children[svg.children.length - 1]
+        animation.beginElement()
     }
 
     rerenderCountry(countryKey: string) {
         const country = this.countrySvgs[countryKey]
         if (!country) return
 
-        this.popChildren(country)
+        this.pop(country)
 
         this.hoverChildren(country, this.getColor(countryKey))
         if (this.showLabel(countryKey) && this.countryLabels[countryKey]) {
@@ -192,8 +164,4 @@ class Map {
 }
 
 const map = writable(new Map(GuessGame))
-
-export {
-    map,
-    colors
-}
+export default map
