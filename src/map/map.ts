@@ -8,13 +8,18 @@ import GuessGame from "./games/guess"
 class Map {
     countrySvgs: { [key: string]: SVGAElement }
     countryLabels: { [key: string]: HTMLTextAreaElement }
+    countryCircles: { [key: string]: SVGGElement }
+    smallCountryLabels: { [key: string]: SVGCircleElement }
     game: MapGame
+    panZoom?: SvgPanZoom.Instance
 
     constructor(Game: typeof GuessGame) {
         this.game = new Game(() => this.rerender(), (countryKey: string) => this.rerenderCountry(countryKey))
 
         this.countrySvgs = {}
         this.countryLabels = {}
+        this.countryCircles = {}
+        this.smallCountryLabels = {}
         document.body.style.backgroundColor = colors.ocean
     }
 
@@ -58,16 +63,6 @@ class Map {
                 const node = <SVGAElement>_node
                 if (node.id != undefined && node.id.substr(0, 1) != "_" && (node.tagName == "g" || node.tagName == "path" || node.tagName == "rect")) {
                     this.countrySvgs[node.id] = node
-
-                    const animation = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform")
-                    animation.setAttribute("attributeName", "transform")
-                    animation.setAttribute("type", "scale")
-                    animation.setAttribute("additive", "sum")
-                    animation.setAttribute("from", "0 0")
-                    animation.setAttribute("to", "1 1")
-                    animation.setAttribute("begin", "indefinite")
-                    animation.setAttribute("dur", "1s")
-                    node.appendChild(animation)
                 }
             })
 
@@ -77,6 +72,8 @@ class Map {
             delete this.countrySvgs["Ocean"]
             delete this.countrySvgs["World"]
 
+            const animationsContainer = document.createElementNS("http://www.w3.org/2000/svg", "g")
+            const circlesContainer = document.createElementNS("http://www.w3.org/2000/svg", "g")
             /* --------------------------------- Labels --------------------------------- */
             this.countrySvgs["labels"].childNodes.forEach((_label) => {
                 const label = <HTMLTextAreaElement>_label
@@ -85,16 +82,50 @@ class Map {
                     const countryId = label.id.substr(0, 2)
                     this.countryLabels[countryId] = label
                     if (label.textContent != countryData[countryId].name) label.textContent = countryData[countryId].name
-
                     label.setAttribute("display", "none")
+
+                    /* ---------------------------- Animation circle ---------------------------- */
+                    if (!this.countrySvgs[countryId]) return
+                    const circleAnimation = document.createElementNS("http://www.w3.org/2000/svg", "circle")
+                    circleAnimation.setAttribute("cx", label.getAttribute("x")!)
+                    circleAnimation.setAttribute("cy", label.getAttribute("y")!)
+                    circleAnimation.setAttribute("r", "0")
+                    circleAnimation.setAttribute("fill", "none")
+                    circleAnimation.setAttribute("stroke", "#000000")
+                    circleAnimation.setAttribute("stroke-width", "2")
+
+                    const circleAnimationAnimation = document.createElementNS("http://www.w3.org/2000/svg", "animate")
+                    circleAnimationAnimation.setAttribute("attributeName", "r")
+                    circleAnimationAnimation.setAttribute("from", "30")
+                    circleAnimationAnimation.setAttribute("to", "0")
+                    circleAnimationAnimation.setAttribute("begin", "indefinite")
+                    circleAnimationAnimation.setAttribute("dur", "3s")
+                    circleAnimation.appendChild(circleAnimationAnimation)
+
+                    animationsContainer.appendChild(circleAnimation)
+                    this.countryCircles[countryId] = circleAnimation
+
+                    /* --------------------------- Small label circle --------------------------- */
+                    if (label.getAttribute("font-size") !== "2") return
+                    const circleSvg = document.createElementNS("http://www.w3.org/2000/svg", "circle")
+                    circleSvg.setAttribute("cx", label.getAttribute("x")!)
+                    circleSvg.setAttribute("cy", label.getAttribute("y")!)
+                    circleSvg.setAttribute("r", "2")
+                    circleSvg.setAttribute("fill", colors.smallCircle)
+                    circleSvg.setAttribute("stroke", "#FFFFFF")
+                    circlesContainer.appendChild(circleSvg)
+                    this.smallCountryLabels[countryId] = circleSvg
                 }
             })
+            svg.appendChild(animationsContainer)
+            svg.appendChild(circlesContainer)
+
+            delete this.countrySvgs["labels"]
 
             Object.keys(this.countrySvgs).forEach((key) => {
                 const country = this.countrySvgs[key]
-                // hoverChildren(country, colors.country)
 
-                country.addEventListener("mouseover", () => {
+                const mouseOver = () => {
                     this.game.selected = key
                     if (country.tagName === "g") {
                         this.hoverChildren(country, colors.hover)
@@ -102,10 +133,14 @@ class Map {
                         if (this.showLabel(key) && this.countryLabels[key]) {
                             this.countryLabels[key].setAttribute("display", "block")
                         }
-                    }
-                })
 
-                country.addEventListener("mouseout", () => {
+                        if (this.smallCountryLabels[key]) {
+                            smallLabel.setAttribute("fill", colors.smallCircleHover)
+                        }
+                    }
+                }
+
+                const mouseOut = () => {
                     this.game.selected = undefined
                     if (country.tagName === "g") {
                         this.hoverChildren(country, this.getColor(key))
@@ -113,12 +148,14 @@ class Map {
                         if (this.showLabel(key) && this.countryLabels[key]) {
                             this.countryLabels[key].setAttribute("display", "block")
                         }
-                    }
-                })
 
-                let doubleClick = false
-                let firstClick: number
-                country.addEventListener("mouseup", () => {
+                        if (this.smallCountryLabels[key]) {
+                            smallLabel.setAttribute("fill", colors.smallCircle)
+                        }
+                    }
+                }
+
+                const mouseUp = () => {
                     if (doubleClick === false) {
                         doubleClick = true
                         firstClick = performance.now()
@@ -132,17 +169,29 @@ class Map {
 
                     doubleClick = false
                     this.game.onClick()
-                })
+                }
+
+                country.addEventListener("mouseover", mouseOver)
+                country.addEventListener("mouseout", mouseOut)
+                let doubleClick = false
+                let firstClick: number
+                country.addEventListener("mouseup", mouseUp)
+
+                const smallLabel = this.smallCountryLabels[key]
+                if (!smallLabel) return
+                smallLabel.addEventListener("mouseover", mouseOver)
+                smallLabel.addEventListener("mouseout", mouseOut)
+                country.addEventListener("mouseup", mouseUp)
             })
 
-            svgPanZoom(svg, {
+            this.panZoom = svgPanZoom(svg, {
                 dblClickZoomEnabled: false
             })
         }
     }
 
-    pop(svg: SVGAElement) {
-        const animation = <SVGAnimateTransformElement>svg.children[svg.children.length - 1]
+    ping(countryKey: string) {
+        const animation = <SVGAnimateElement>this.countryCircles[countryKey].children[this.countryCircles[countryKey].children.length - 1]
         animation.beginElement()
     }
 
@@ -150,11 +199,13 @@ class Map {
         const country = this.countrySvgs[countryKey]
         if (!country) return
 
-        this.pop(country)
+        this.ping(countryKey)
 
         this.hoverChildren(country, this.getColor(countryKey))
         if (this.showLabel(countryKey) && this.countryLabels[countryKey]) {
             this.countryLabels[countryKey].setAttribute("display", "block")
+            if (!this.smallCountryLabels[countryKey]) return
+            this.smallCountryLabels[countryKey].setAttribute("visibility", "hidden")
         }
     }
 

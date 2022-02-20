@@ -57,7 +57,7 @@ class GuessGame implements MapGame {
         this.endedAt = 0
         this.started = performance.now()
 
-        this.helpBoxHTML = `To play is very simple. Just <strong>double</strong> click where you think the given country is.
+        this.helpBoxHTML = `To play is very simple. Just <strong>double</strong> click where you think the given country is. The black circles are used to select the smaller countries.
 <br /><br />
 You will have 3 guesses for each country, and infinite skips. After a skip or an incorrect guess, the game will tell you where the country is.
 <br /><br />
