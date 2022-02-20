@@ -121,13 +121,13 @@ const countryData: {
 		"region": "SA",
 		"population": 112309
 	},
-	"AX": {
-		"name": "Åland Islands",
-		"longName": "Åland",
-		"sovereignty": "Finland",
-		"region": "EU",
-		"population": 29789
-	},
+	// "AX": {
+	// 	"name": "Åland Islands",
+	// 	"longName": "Åland",
+	// 	"sovereignty": "Finland",
+	// 	"region": "EU",
+	// 	"population": 29789
+	// },
 	"AZ": {
 		"name": "Azerbaijan",
 		"longName": "The Republic of Azerbaijan",
@@ -226,13 +226,13 @@ const countryData: {
 		"region": "SA",
 		"population": 11469896
 	},
-	"BQ": {
-		"name": "Bonaire, Sint Eustatius and Saba",
-		"longName": "Bonaire, Sint Eustatius and Saba",
-		"sovereignty": "Netherlands",
-		"region": "SA",
-		"population": 25157
-	},
+	// "BQ": {
+	// 	"name": "Bonaire, Sint Eustatius and Saba",
+	// 	"longName": "Bonaire, Sint Eustatius and Saba",
+	// 	"sovereignty": "Netherlands",
+	// 	"region": "SA",
+	// 	"population": 25157
+	// },
 	"BR": {
 		"name": "Brazil",
 		"longName": "The Federative Republic of Brazil",
@@ -254,13 +254,13 @@ const countryData: {
 		"region": "AS",
 		"population": 741672
 	},
-	"BV": {
-		"name": "Bouvet Island",
-		"longName": "Bouvet Island",
-		"sovereignty": "Norway",
-		"region": "AN",
-		"population": 0
-	},
+	// "BV": {
+	// 	"name": "Bouvet Island",
+	// 	"longName": "Bouvet Island",
+	// 	"sovereignty": "Norway",
+	// 	"region": "AN",
+	// 	"population": 0
+	// },
 	"BW": {
 		"name": "Botswana",
 		"longName": "The Republic of Botswana",
@@ -304,13 +304,13 @@ const countryData: {
 			"CA-YT": { "name": "Yukon", "capital": "Whitehorse", "population": 41078 }
 		}
 	},
-	"CC": {
-		"name": "Cocos (Keeling) Islands",
-		"longName": "The Territory of Cocos (Keeling) Islands",
-		"sovereignty": "Australia",
-		"region": "AS",
-		"population": 544
-	},
+	// "CC": {
+	// 	"name": "Cocos (Keeling) Islands",
+	// 	"longName": "The Territory of Cocos (Keeling) Islands",
+	// 	"sovereignty": "Australia",
+	// 	"region": "AS",
+	// 	"population": 544
+	// },
 	"CD": {
 		"name": "Congo (Dem. Rep.)",
 		"longName": "The Democratic Republic of the Congo",
@@ -448,13 +448,13 @@ const countryData: {
 		"region": "SA",
 		"population": 158665
 	},
-	"CX": {
-		"name": "Christmas Island",
-		"longName": "The Territory of Christmas Island",
-		"sovereignty": "Australia",
-		"region": "AS",
-		"population": 1843
-	},
+	// "CX": {
+	// 	"name": "Christmas Island",
+	// 	"longName": "The Territory of Christmas Island",
+	// 	"sovereignty": "Australia",
+	// 	"region": "AS",
+	// 	"population": 1843
+	// },
 	"CY": {
 		"name": "Cyprus",
 		"longName": "The Republic of Cyprus",
@@ -744,13 +744,13 @@ const countryData: {
 	// 	"region": "AS",
 	// 	"population": 7500700
 	// },
-	"HM": {
-		"name": "Heard Island and McDonald Islands",
-		"longName": "The Territory of Heard Island and McDonald Islands",
-		"sovereignty": "Australia",
-		"region": "AN",
-		"population": 0
-	},
+	// "HM": {
+	// 	"name": "Heard Island and McDonald Islands",
+	// 	"longName": "The Territory of Heard Island and McDonald Islands",
+	// 	"sovereignty": "Australia",
+	// 	"region": "AN",
+	// 	"population": 0
+	// },
 	"HN": {
 		"name": "Honduras",
 		"longName": "The Republic of Honduras",
@@ -814,13 +814,13 @@ const countryData: {
 		"region": "AS",
 		"population": 1359812346
 	},
-	"IO": {
-		"name": "British Indian Ocean Territory",
-		"longName": "The British Indian Ocean Territory",
-		"sovereignty": "United Kingdom",
-		"region": "AS",
-		"population": 0
-	},
+	// "IO": {
+	// 	"name": "British Indian Ocean Territory",
+	// 	"longName": "The British Indian Ocean Territory",
+	// 	"sovereignty": "United Kingdom",
+	// 	"region": "AS",
+	// 	"population": 0
+	// },
 	"IQ": {
 		"name": "Iraq",
 		"longName": "The Republic of Iraq",
@@ -1213,13 +1213,13 @@ const countryData: {
 		"region": "AF",
 		"population": 22314743
 	},
-	"NF": {
-		"name": "Norfolk Island",
-		"longName": "The Territory of Norfolk Island",
-		"sovereignty": "Australia",
-		"region": "OC",
-		"population": 1748
-	},
+	// "NF": {
+	// 	"name": "Norfolk Island",
+	// 	"longName": "The Territory of Norfolk Island",
+	// 	"sovereignty": "Australia",
+	// 	"region": "OC",
+	// 	"population": 1748
+	// },
 	"NG": {
 		"name": "Nigeria",
 		"longName": "The Federal Republic of Nigeria",
@@ -1480,13 +1480,13 @@ const countryData: {
 		"region": "EU",
 		"population": 2094060
 	},
-	"SJ": {
-		"name": "Svalbard and Jan Mayen",
-		"longName": "Svalbard and Jan Mayen",
-		"sovereignty": "Norway",
-		"region": "EU",
-		"population": 0
-	},
+	// "SJ": {
+	// 	"name": "Svalbard and Jan Mayen",
+	// 	"longName": "Svalbard and Jan Mayen",
+	// 	"sovereignty": "Norway",
+	// 	"region": "EU",
+	// 	"population": 0
+	// },
 	"SK": {
 		"name": "Slovakia",
 		"longName": "The Slovak Republic",
@@ -1588,13 +1588,13 @@ const countryData: {
 		"region": "AF",
 		"population": 15692969
 	},
-	"TF": {
-		"name": "French Southern Territories",
-		"longName": "The French Southern and Antarctic Lands",
-		"sovereignty": "France",
-		"region": "AF",
-		"population": 0
-	},
+	// "TF": {
+	// 	"name": "French Southern Territories",
+	// 	"longName": "The French Southern and Antarctic Lands",
+	// 	"sovereignty": "France",
+	// 	"region": "AF",
+	// 	"population": 0
+	// },
 	"TG": {
 		"name": "Togo",
 		"longName": "The Togolese Republic",
@@ -1700,13 +1700,13 @@ const countryData: {
 		"region": "AF",
 		"population": 40299300
 	},
-	"UM": {
-		"name": "United States Minor Outlying Islands",
-		"longName": "Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Atoll, Navassa Island, Palmyra Atoll, and Wake Island",
-		"sovereignty": "United States",
-		"region": "OC",
-		"population": 0
-	},
+	// "UM": {
+	// 	"name": "United States Minor Outlying Islands",
+	// 	"longName": "Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Atoll, Navassa Island, Palmyra Atoll, and Wake Island",
+	// 	"sovereignty": "United States",
+	// 	"region": "OC",
+	// 	"population": 0
+	// },
 	"US": {
 		"name": "United States",
 		"longName": "The United States of America",
@@ -1791,13 +1791,13 @@ const countryData: {
 		"region": "OC",
 		"population": 195843
 	},
-	"XK": {
-		"name": "Kosovo",
-		"longName": "The Republic of Kosovo",
-		"sovereignty": "disputed",
-		"region": "EU",
-		"population": 1810463
-	},
+	// "XK": {
+	// 	"name": "Kosovo",
+	// 	"longName": "The Republic of Kosovo",
+	// 	"sovereignty": "disputed",
+	// 	"region": "EU",
+	// 	"population": 1810463
+	// },
 	"YE": {
 		"name": "Yemen",
 		"longName": "The Republic of Yemen",

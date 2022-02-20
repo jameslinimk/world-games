@@ -188,10 +188,23 @@ class Map {
             this.panZoom = svgPanZoom(svg, {
                 dblClickZoomEnabled: false
             })
+
+            // Object.keys(countryData).forEach(key => {
+            //     if (!Object.keys(this.countryCircles).includes(key)) {
+            //         console.log(key, countryData[key].name)
+            //     }
+            // })
+            // console.log("-")
+            // Object.keys(countryData).forEach(key => {
+            //     if (!Object.keys(this.countrySvgs).includes(key)) {
+            //         console.log(key, countryData[key].name)
+            //     }
+            // })
         }
     }
 
     ping(countryKey: string) {
+        if (!this.countryCircles[countryKey]) return
         const animation = <SVGAnimateElement>this.countryCircles[countryKey].children[this.countryCircles[countryKey].children.length - 1]
         animation.beginElement()
     }

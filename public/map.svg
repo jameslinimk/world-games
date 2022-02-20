@@ -2932,7 +2932,7 @@
 	<text x="295" y="151" id="BM-label" font-size="2" font-family="Verdana">Bermuda</text>
 	<text x="784" y="239" id="BN-label" font-size="2" font-family="Verdana">Brunei</text>
 	<text x="291" y="304" id="BO-label" font-size="5" font-family="Verdana">Bolivia</text>
-	<text x="278" y="216" id="BQ-label" font-size="2" font-family="Verdana">Bonaire, Sint Eustatius and Saba</text>
+	<!-- <text x="278" y="216" id="BQ-label" font-size="2" font-family="Verdana">Bonaire, Sint Eustatius and Saba</text> -->
 	<text x="315" y="298" id="BR-label" font-size="8" font-family="Verdana">Brazil</text>
 	<text x="261" y="178" id="BS-label" font-size="5" font-family="Verdana">Bahamas</text>
 	<text x="710" y="167" id="BT-label" font-size="2" font-family="Verdana">Bhutan</text>
@@ -3058,7 +3058,7 @@
 	<text x="517" y="325" id="NA-label" font-size="5" font-family="Verdana">Namibia</text>
 	<text x="913" y="319" id="NC-label" font-size="2" font-family="Verdana">New Caledonia</text>
 	<text x="488" y="198" id="NE-label" font-size="5" font-family="Verdana">Niger</text>
-	<text x="919" y="338" id="NF-label" font-size="2" font-family="Verdana">Norfolk Island</text>
+	<!-- <text x="919" y="338" id="NF-label" font-size="2" font-family="Verdana">Norfolk Island</text> -->
 	<text x="490" y="224" id="NG-label" font-size="5" font-family="Verdana">Nigeria</text>
 	<text x="231" y="213" id="NI-label" font-size="5" font-family="Verdana">Nicaragua</text>
 	<text x="482" y="90" id="NL-label" font-size="5" font-family="Verdana">Netherlands</text>
@@ -3137,7 +3137,7 @@
 	<text x="927" y="306" id="VU-label" font-size="2" font-family="Verdana">Vanuatu</text>
 	<text x="975" y="295" id="WF-label" font-size="2" font-family="Verdana">Wallis and Futuna</text>
 	<text x="983" y="296" id="WS-label" font-size="2" font-family="Verdana">Samoa</text>
-	<text x="521" y="119" id="XK-label" font-size="2" font-family="Verdana">Kosovo</text>
+	<!-- <text x="521" y="119" id="XK-label" font-size="2" font-family="Verdana">Kosovo</text> -->
 	<text x="600" y="204" id="YE-label" font-size="5" font-family="Verdana">Yemen</text>
 	<text x="591" y="294" id="YT-label" font-size="2" font-family="Verdana">Mayotte</text>
 	<text x="533" y="343" id="ZA-label" font-size="5" font-family="Verdana">South Africa</text>
